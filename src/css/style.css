@@ -1,0 +1,11 @@
+#articles {
+  width: 25rem; }
+  #articles img {
+    width: 100%; }
+
+.article-wrapper {
+  max-width: 20rem; }
+  .article-wrapper__headlines {
+    display: flex; }
+    .article-wrapper__headlines img {
+      width: 100%; }
