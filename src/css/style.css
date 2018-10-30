@@ -3,9 +3,13 @@
   #articles img {
     width: 100%; }
 
+.headlines {
+  display: flex; }
+
 .article-wrapper {
-  max-width: 20rem; }
-  .article-wrapper__headlines {
-    display: flex; }
-    .article-wrapper__headlines img {
-      width: 100%; }
+  width: 20rem; }
+  .article-wrapper__headline img {
+    width: 100%; }
+
+body {
+  color: green; }
