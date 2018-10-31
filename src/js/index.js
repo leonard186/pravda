@@ -1,5 +1,3 @@
-"use:strict";
-
 import '../scss/main.scss';
 import GetNews from './models/EndPointEverything';
 import GetHeadlines from './models/EndPointHeadlines';
@@ -34,12 +32,12 @@ const controlSources = async () => {
 
 };
 
-controlHeadlines();
-controlSources();
-
+//controlHeadlines();
+//controlSources();
+/*
 elements.searchButton.addEventListener('click', e => {
     e.preventDefault();
     elements.articleNode.innerHTML = '';
     controlSearch();
-});
+});*/
 

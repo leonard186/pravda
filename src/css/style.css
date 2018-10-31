@@ -1,3 +1,30 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono:100,400,700");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+a,
+a:link,
+a:active,
+a:visited,
+a:hover {
+  color: inherit;
+  text-decoration: none; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+
+body {
+  font-family: "Roboto Mono", monospace;
+  color: #49494d;
+  font-weight: 400;
+  line-height: 4rem;
+  font-size: 1.45rem; }
+
 #articles {
   width: 25rem; }
   #articles img {
@@ -11,5 +38,139 @@
   .article-wrapper__headline img {
     width: 100%; }
 
-body {
-  color: green; }
+.top-menu {
+  background-color: #2c2c34;
+  color: #BBBABB;
+  display: grid; }
+  .top-menu a {
+    padding: 0 1.25rem;
+    border-left: 1px solid #4c4c59; }
+  .top-menu a:hover,
+  .top-menu a:active {
+    color: #fff;
+    transition: all .2s; }
+  .top-menu__wrapper {
+    display: grid;
+    grid-template-columns: .5fr max-content max-content max-content 1fr  max-content .5fr;
+    align-items: center; }
+  .top-menu__icons {
+    grid-area: 1 / 2 / 1 / 3;
+    display: flex; }
+    .top-menu__icons a:hover,
+    .top-menu__icons a:active {
+      color: #fff; }
+    .top-menu__icons a:nth-child(1):hover {
+      background-color: #0077b5; }
+    .top-menu__icons a:nth-child(2):hover {
+      background-color: #4078c0; }
+    .top-menu__icons a:nth-child(3):hover {
+      background-color: #f48024; }
+  .top-menu__phone, .top-menu__email {
+    display: flex; }
+    .top-menu__phone i, .top-menu__email i {
+      padding-right: 0.5rem; }
+  .top-menu__phone {
+    grid-area: 1 / 3 / 1 / 4; }
+  .top-menu__email {
+    grid-area: 1 / 4 / 1 / 5; }
+  .top-menu__search {
+    grid-area: 1 / 6 / 1 / 7;
+    display: flex;
+    position: relative; }
+    .top-menu__search-button {
+      background-color: #d4000e;
+      border: none;
+      padding: 1.2rem;
+      color: #dddde7;
+      font-size: 1.5rem;
+      z-index: 10; }
+      .top-menu__search-button:focus {
+        outline: none; }
+    .top-menu__search:hover .top-menu__search-input {
+      width: 20rem; }
+    .top-menu__search-input {
+      border: none;
+      transition: all .5s ease-in-out;
+      position: absolute;
+      padding: 0 1rem;
+      top: 0;
+      right: 0;
+      width: 0;
+      height: 100%;
+      z-index: 0; }
+      .top-menu__search-input:focus {
+        outline: none;
+        width: 20rem; }
+
+.top-menu {
+  background-color: #2c2c34;
+  color: #BBBABB;
+  display: grid; }
+  .top-menu a {
+    padding: 0 1.25rem;
+    border-left: 1px solid #4c4c59; }
+  .top-menu a:hover,
+  .top-menu a:active {
+    color: #fff;
+    transition: all .2s; }
+  .top-menu__wrapper {
+    display: grid;
+    grid-template-columns: .5fr max-content max-content max-content 1fr  max-content .5fr;
+    align-items: center; }
+  .top-menu__icons {
+    grid-area: 1 / 2 / 1 / 3;
+    display: flex; }
+    .top-menu__icons a:hover,
+    .top-menu__icons a:active {
+      color: #fff; }
+    .top-menu__icons a:nth-child(1):hover {
+      background-color: #0077b5; }
+    .top-menu__icons a:nth-child(2):hover {
+      background-color: #4078c0; }
+    .top-menu__icons a:nth-child(3):hover {
+      background-color: #f48024; }
+  .top-menu__phone, .top-menu__email {
+    display: flex; }
+    .top-menu__phone i, .top-menu__email i {
+      padding-right: 0.5rem; }
+  .top-menu__phone {
+    grid-area: 1 / 3 / 1 / 4; }
+  .top-menu__email {
+    grid-area: 1 / 4 / 1 / 5; }
+  .top-menu__search {
+    grid-area: 1 / 6 / 1 / 7;
+    display: flex;
+    position: relative; }
+    .top-menu__search-button {
+      background-color: #d4000e;
+      border: none;
+      padding: 1.2rem;
+      color: #dddde7;
+      font-size: 1.5rem;
+      z-index: 10; }
+      .top-menu__search-button:focus {
+        outline: none; }
+    .top-menu__search:hover .top-menu__search-input {
+      width: 20rem; }
+    .top-menu__search-input {
+      border: none;
+      transition: all .5s ease-in-out;
+      position: absolute;
+      padding: 0 1rem;
+      top: 0;
+      right: 0;
+      width: 0;
+      height: 100%;
+      z-index: 0; }
+      .top-menu__search-input:focus {
+        outline: none;
+        width: 20rem; }
+
+.container {
+  display: grid;
+  grid-template-rows: [top-menu] auto [logo] 13rem [categories] 4rem [countries] 4rem [header] 40rem [breaking] 4rem [stories-by-countries-display] 60rem [articles] 60rem [featured] 30rem [videos] 60rem [footer] 60rem [footer-end];
+  grid-template-columns: 1fr repeat(10, [col-start] minmax(min-content, 14rem) [col-end]) 1fr;
+  grid-row-gap: 4rem; }
+
+.top-menu {
+  grid-area: 1 / 1 / 1 / 15; }

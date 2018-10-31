@@ -6,15 +6,112 @@
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Document</title>
-        <link rel="stylesheet" type="application/javascript" href="../dist/css/style.css">
+        <link rel="stylesheet" type="application/javascript" href="../src/css/style.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
     </head>
-    <body>
+    <body class="container">
 
-        <article id="headlines" class="headlines"></article>
-        <section class="sources" id="sources"></section>
-        <input type="text" id="search" title="search">
-        <button type="submit" id="search-button" class="btn-search">Search</button>
+    <!--========== BEGIN Top menu section ==========-->
+        <section class="top-menu">
+            <div class="top-menu__wrapper">
+                <div class="top-menu__icons">
+                    <a href="https://www.linkedin.com/in/leonard-ballok-151329174/">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/leonard186">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://stackexchange.com/users/12905567/lenny86?tab=activity">
+                        <i class="fab fa-stack-overflow"></i>
+                    </a>
+                </div>
+                <div class="top-menu__phone">
+                    <a href="tel:+447715963885"><i class="fas fa-phone"></i>+44(771)5963885</a>
+                </div>
+                <div class="top-menu__email">
+                    <a href="mailto:ballok.leonard@yahoo.com?Subject=Hello%20again" target="_top"><i class="far fa-envelope"></i>Send Us an Mail</a>
+                </div>
+                <div class="top-menu__search">
+                        <button class="top-menu__search-button" id="search-button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <input type="text" class="top-menu__search-input" id="search" title="search"
+                           placeholder="Search news articles">
+                </div>
+            </div>
+        </section>
+    <!--========== END Top menu section ==========-->
 
-        <div id="articles"></div>
+
+
+    <!--========== BEGIN Logo display ==========-->
+        <section class="logo-container">
+            <img src="img/logo.png" alt="Logo" class="logo-container__logo">
+        </section>
+    <!--========== END Logo display ==========-->
+
+
+
+    <!--========== BEGIN Headlines by Category List ==========-->
+        <section class="headlines-list"></section>
+    <!--========== END Headlines by Category List ==========-->
+
+
+
+    <!--========== BEGIN Articles by Location List ==========-->
+        <section class="articles-list"></section>
+    <!--========== END Articles by Location List ==========-->
+
+
+
+    <!--========== BEGIN Header section ==========-->
+        <header class="header"></header>
+    <!--========== END Header section ==========-->
+
+
+
+    <!--========== BEGIN Breaking News strip ==========-->
+        <section class="breaking"></section>
+    <!--========== END Breaking News strip ==========-->
+
+
+
+    <!--========== BEGIN Display Top Headlines ==========-->
+        <section class="headlines-display"></section>
+    <!--========== END Display Top Headlines ==========-->
+
+
+
+    <!--========== BEGIN Display Articles by Location ==========-->
+        <section class="articles-display"></section>
+    <!--========== END Display Articles by Location ==========-->
+
+
+
+    <!--========== BEGIN Band Strip - Featured ==========-->
+        <section class="featured"></section>
+    <!--========== END Band Strip - Featured ==========-->
+
+
+
+    <!--========== BEGIN Videos section ==========-->
+        <section class="videos"></section>
+    <!--========== END Videos section ==========-->
+
+
+
+    <!--========== BEGIN Footer section ==========-->
+        <footer class="footer"></footer>
+    <!--========== END Footer section ==========-->
+
+
+
+    <!--
+       <section class="sources" id="sources"></section>
+       <article id="headlines" class="headlines"></article>
+       <input type="text" id="search" title="search">
+       <button type="submit" id="search-button" class="btn-search">Search</button>
+<div id="articles"></div>
+        -->
     </body>
 </html>

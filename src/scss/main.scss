@@ -1,9 +1,25 @@
-@import "components/article";
-@import "components/headlines";
+//font
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:100,400,700');
+
+//modules
+@import "base/typography";
 @import "base/base";
 
+@import "components/article";
+@import "components/headlines";
 
+@import "components/top-menu";
+@import "components/header";
+@import "components/breaking";
+@import "components/headlines-list";
+@import "components/articles-list";
+@import "components/articles-display";
+@import "components/featured";
+@import "components/footer";
+@import "components/logo";
+@import "components/headlines-display";
+@import "components/top-menu";
+@import "components/video";
 
-body{
-color: green;
-};
+@import "layout/home";
+
