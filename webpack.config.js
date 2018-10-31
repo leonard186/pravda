@@ -38,6 +38,24 @@ module.exports = {
                         loader: "sass-loader" // compiles Sass to CSS
                     }
                 ]
+            },
+            {
+              test: /\.html$/,
+              use: ['html-loader']
+            },
+            {
+                test: /\.(jpe?g|png|gif|svg)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: 'img/',
+                            publicPath: 'img/'
+                        }
+                    },
+                    'image-webpack-loader'
+                ]
             }
         ]
     }
