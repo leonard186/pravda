@@ -1,9 +1,33 @@
-.logo-container {
+.logo-left {
   width: 100%;
   height: 100%;
-  border: 20px solid red;
+  display: flex;
+  align-items: center;
 
-  &__logo {
+  &__text-container {
+    font-size: 2.5rem;
+    margin-left: 1rem;
 
   }
+
+  &__24 {
+    color: $color-standout;
+    font-weight: 300;
+  }
+
+  &__news {
+    color: $text-primary-dark;
+  }
+
+  &__source {
+    color: $bg-primary-neutral;
+    font-size: 1.6rem;
+    font-weight: 400;
+  }
+}
+
+.logo-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }

@@ -1,15 +1,22 @@
 .container{
   display: grid;
   grid-template-rows: [top-menu] auto [logo] 13rem [categories] auto [countries] auto [header] 40rem [breaking] auto [stories-by-countries-display] 60rem [articles] 60rem [featured] 30rem [videos] 60rem [footer] 60rem [footer-end];
-  grid-template-columns: 1fr repeat(10, [col-start] minmax(min-content, 14rem) [col-end]) 1fr;
+  grid-template-columns: 1fr repeat(8, [col-start] minmax(min-content, 16rem) [col-end]) 1fr;
 }
 
-.top-menu {
-  grid-area: 1 / 1 / 1 / 15;
+
+.top-menu__wrapper-left {
+  grid-area: 1 / 2 / 1 / 6;
 }
 
-.logo-container {
-  grid-area: 2 / 2 / 2 / 12;
-  display: grid;
-  align-items: center;
+.top-menu__search {
+  grid-area: 1 / 8 / 1 / 10;
+}
+
+.logo-left {
+  grid-area: 2 / 2 / 2 / 4;
+}
+
+.logo-right {
+  grid-area: 2 / 5 / 2 / 10;
 }
