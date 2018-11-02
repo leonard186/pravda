@@ -44,34 +44,72 @@
 
 
     <!--========== BEGIN Logo display ==========-->
-    <section class="logo-container">
 
-        <div class="logo-left">
+        <a href="#" class="logo-left">
             <img src="img/logo.png" alt="Logo" class="logo-left__logo">
             <div class="logo-left__text-container">
-                <h2><span class="logo-left__24">24h </span><span class="logo-left__news">News</span></h2>
+                <h2><span class="logo-left__24">24h </span><span class="logo-left__news">Pravda</span></h2>
                 <h4 class="logo-left__source">Your 24h News Source</h4>
             </div>
+        </a>
+
+        <div class="logo-right">
+            <div class="logo-right__img-container">
+                <img src="img/banner.jpeg" alt="advert banner placeholder" class="logo-right__banner">
+            </div>
         </div>
-    </section>
     <!--========== END Logo display ==========-->
 
 
 
     <!--========== BEGIN Headlines by Category List ==========-->
-        <section class="headlines-list"></section>
+        <div class="headlines-list__underlay"></div>
+        <section class="headlines-list">
+            <ul class="headlines-list__btn-group">
+                <li class="headlines-list__btn-group-button" data-type="business">Business</li>
+                <li class="headlines-list__btn-group-button" data-type="entertainment">Entertainment</li>
+                <li class="headlines-list__btn-group-button" data-type="general">General</li>
+                <li class="headlines-list__btn-group-button" data-type="health">Health</li>
+                <li class="headlines-list__btn-group-button" data-type="science">Science</li>
+                <li class="headlines-list__btn-group-button" data-type="sports">Sports</li>
+                <li class="headlines-list__btn-group-button" data-type="technology">Technology</li>
+            </ul>
+        </section>
     <!--========== END Headlines by Category List ==========-->
 
 
 
     <!--========== BEGIN Articles by Location List ==========-->
-        <section class="articles-list"></section>
+        <section class="articles-list">
+            <ul class="articles-list__btn-group">
+                <li class="articles-list__btn-group-button" data-type="world">World</li>
+                <li class="articles-list__btn-group-button" data-type="us">U.S.</li>
+                <li class="articles-list__btn-group-button" data-type="uk">U.K.</li>
+                <li class="articles-list__btn-group-button" data-type="europe">Europe</li>
+                <li class="articles-list__btn-group-button" data-type="asia">Asia</li>
+            </ul>
+
+            <div class="articles-list__date-time">
+                <span class="articles-list__date-time-date" id="header-date"></span>
+                <span class="articles-list__date-time-time" id="header-time">12:00 AM</span>
+            </div>
+        </section>
     <!--========== END Articles by Location List ==========-->
 
 
 
     <!--========== BEGIN Header section ==========-->
-        <header class="header"></header>
+        <div class="header-underlay"></div>
+        <header class="header">
+            <h1>
+                <span class="header__sub">Fake news is cheap to produce. Genuine journalism is expensive</span>
+                <span class="header__primary">latest news from trusted sources on <span class="header__primary-standout">Pravda</span></span>
+            </h1>
+            <div class="header__news-snippet">
+                <h2 class="header__news-title">No one hurt in North Side blaze</h2>
+                <p class="header__news-info">A FIRE THAT BROKE OUT TUESDAY AFTERNOON IN THE PARK WEST, FORCING RESIDENTS TO EVACUATE, IS UNDER CONTROL AND NO ONE WAS HURT.</p>
+            </div>
+        </header>
     <!--========== END Header section ==========-->
 
 

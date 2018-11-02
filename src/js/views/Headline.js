@@ -11,3 +11,9 @@ export const renderHeadlines = (data) => {
          </div>
         `;
 };
+
+export const pushSingleHeadline = (data) => {
+    return elements.headerNews.innerHTML =
+        `<h2 class="header__news-title">${data.title}</h2>
+        <p class="header__news-info">${data.description}</p>`
+};

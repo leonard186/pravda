@@ -1,6 +1,7 @@
 // COLOR VARIABLES
 $bg-primary-neutral: #2c2c34;
 $color-standout: #d4000e;
+$color-standout-light: #e4000d;
 
 
 $text-primary-dark: #49494d;
@@ -46,6 +47,10 @@ a:hover,
 a:active {
   cursor: pointer;
   transition: all .2s;
+}
+
+ul {
+  list-style: none;
 }
 
 html {

@@ -1,0 +1,40 @@
+.header-underlay {
+  grid-area: 5 / 1 / 5 / 11;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/header.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header {
+  color: $text-primary-light;
+  text-align: center;
+  margin-top: 5%;
+
+
+  &__sub {
+    display: block;
+    font-weight: 400;
+  }
+
+  &__primary {
+    text-transform: uppercase;
+    font-size: 5rem;
+    display: block;
+    margin-top: 3rem;
+
+    &-standout {
+      color: $color-standout;
+    }
+  }
+
+  &__news-title {
+    margin: 3rem 0 1rem 0;
+    text-transform: uppercase;
+  }
+
+  &__news-info {
+    letter-spacing: 0.2rem;
+    line-height: 2.5rem;
+    font-weight: 700;
+  }
+}

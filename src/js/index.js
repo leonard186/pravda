@@ -3,6 +3,7 @@ import GetNews from './models/EndPointEverything';
 import GetHeadlines from './models/EndPointHeadlines';
 import GetSources from './models/EndPointSources';
 import {elements} from './views/Base';
+import {pushTime, getDate} from "./components/Timestamp";
 import * as article from './views/Article';
 
 const state = {};
@@ -31,6 +32,22 @@ const controlSources = async () => {
     }
 
 };
+
+const pushSingleHeadline = async () => {
+    const category = 'general';
+    let page = 1;
+    state.singleHeadline = new GetHeadlines(category, page);
+    await state.singleHeadline.getResponse();
+    /*
+    setInterval(() => {
+        page < 5 ? page++ : page=1;
+        state.singleHeadline.getResponse();
+        console.log(page)
+    }, 5000)
+    */
+};
+
+pushSingleHeadline();
 
 //controlHeadlines();
 //controlSources();

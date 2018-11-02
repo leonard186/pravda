@@ -1,5 +1,5 @@
 import {variables} from '../views/Base';
-import {renderHeadlines} from '../views/Headline';
+import {renderHeadlines, pushSingleHeadline} from '../views/Headline';
 
 const NewsAPI = require('newsapi');
 const newsapi = new NewsAPI(variables.apiKey);
@@ -14,14 +14,16 @@ export default class Headlines {
         newsapi.v2.topHeadlines({
             country: ['gb', 'us', 'ca', 'au'],
             category: this.category,
-            pageSize: 5,
+            pageSize: 1,
             page: this.page
         }).then(response => {
             //error handler
             console.log(response);
             response.articles.map(article => {
                 console.log(article);
-                renderHeadlines(article);
+                //renderHeadlines(article);
+                //setInterval(() => {pushSingleHeadline(article)}, 5000);
+                pushSingleHeadline(article)
             })
         }).catch(error => console.log(error));
     }

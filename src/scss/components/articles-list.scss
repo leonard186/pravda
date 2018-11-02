@@ -1,0 +1,49 @@
+.articles-list {
+  display: flex;
+  justify-content: space-between;
+  font-family: $font-spaced;
+
+  &__btn-group {
+    display: flex;
+    text-transform: uppercase;
+    color: $text-primary-dark;
+    :not(:last-child) {
+      margin-right: 2rem;
+    }
+
+    &-button {
+      padding: 0 1rem;
+      position: relative;
+      z-index: 0;
+
+      &::before {
+        content: '';
+        position: absolute;
+        border-bottom: .2rem solid $color-standout-light;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        height:100%;
+        width: 0;
+        transition: all .2s ease-out;
+      }
+
+      &:hover::before {
+        width: 100%;
+        cursor: pointer;
+      }
+
+    }
+  }
+
+  &__date-time {
+
+
+    &-time {
+      background-color: $color-standout;
+      color: $text-primary-light;
+      padding: .4rem 1rem;
+    }
+
+  }
+}
