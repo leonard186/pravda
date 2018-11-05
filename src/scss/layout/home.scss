@@ -1,6 +1,6 @@
 .container{
   display: grid;
-  grid-template-rows: [top-menu] auto [logo] 13rem [categories] auto [countries] auto [header] 40rem [breaking] auto [stories-by-countries-display] 60rem [articles] 60rem [featured] 30rem [videos] 60rem [footer] 60rem [footer-end];
+  grid-template-rows: [top-menu] auto [logo] 13rem [categories] auto [countries] auto [header] 40rem [breaking] auto [headlines-display] 60rem [articles] 60rem [featured] 30rem [videos] 60rem [footer] 60rem [footer-end];
   grid-template-columns: 1fr repeat(8, [col-start] minmax(min-content, 16rem) [col-end]) 1fr;
 }
 
@@ -31,4 +31,16 @@
 
 .header {
   grid-area: 5 / 2 / 5 / 10;
+}
+
+.breaking {
+  grid-area: 6 / 2 / 6 / 10;
+}
+
+.headlines-display {
+  grid-area: 7 / 2 / 7 / 10;
+}
+
+.articles-display {
+  grid-area: 8 / 2 / 8 / 10;
 }

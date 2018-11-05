@@ -1,0 +1,76 @@
+@import '../base/mixins';
+
+.breaking {
+  display: flex;
+  align-items: center;
+  margin: 3.6rem 0 2.4rem 0;
+  font-size: 1.6rem;
+
+  &__title {
+    background-color: $color-standout;
+    color: $text-primary-light;
+    padding: 0 1.6rem;
+    font-weight: 400;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+  }
+
+  &__news {
+    display: flex;
+    align-items: center;
+    flex:1;
+    justify-content: space-between;
+    padding: 0 1.6rem;
+    background-color: $bg-secondary-neutral-dark;
+    color: $text-primary-light;
+
+    &__text {
+      position: relative;
+      transition: all .2s;
+      transform: translateX(0);
+
+      &-1 {
+        position: relative;
+        opacity: 1;
+      }
+
+      &-2 {
+        position: absolute;
+        top: 10rem;
+        left: 0;
+        opacity: 0;
+      }
+
+      &-3 {
+        position: absolute;
+        top: 20rem;
+        left: 0;
+        opacity: 0;
+      }
+
+      &-4 {
+        position: absolute;
+        top: 30rem;
+        left: 0;
+        opacity: 0;
+      }
+
+
+      &-title {
+        font-size: 1.6rem;
+        font-weight: 400;
+        text-transform: uppercase;
+      }
+
+      &-content {
+        font-size: 1.6rem;
+        font-weight: 400;
+        color: $text-neutral-light
+      }
+    }
+
+    &__arrows {
+      @include resetArrow($text-neutral-light, $text-primary-light, 1.8rem);
+    }
+  }
+}

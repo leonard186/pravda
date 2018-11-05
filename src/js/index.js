@@ -47,7 +47,7 @@ const pushSingleHeadline = async () => {
     */
 };
 
-pushSingleHeadline();
+//pushSingleHeadline();
 
 //controlHeadlines();
 //controlSources();

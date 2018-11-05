@@ -1,0 +1,54 @@
+@mixin resetArrow($color, $color-hover, $fontSize) {
+  * {
+    border: none;
+    background-color: transparent;
+    color: $color;
+    font-size: $fontSize;
+    padding: 0 .1rem;
+    transition: all .2s;
+
+    &:hover,
+    &:active,
+    &:focus {
+      cursor: pointer;
+      color: $color-hover;
+      outline: none;
+    }
+  }
+}
+
+
+//$gap argument defines the distance between content and underline
+@mixin btnUnderline($gap) {
+  &-button {
+    color: $text-primary-dark;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: none;
+    position: relative;
+    z-index: 0;
+    transition: all .2s ease-out;
+
+    &::before {
+      content: '';
+      position: absolute;
+      border-bottom: .2rem solid $color-standout-light;
+      z-index: 1;
+      top: $gap;
+      left: 0;
+      height:100%;
+      width: 0;
+      transition: all .2s ease-out;
+
+    }
+
+    &:hover::before {
+      width: 100%;
+      cursor: pointer;
+    }
+    &:hover {
+      color: $color-standout;
+    }
+
+  }
+}
