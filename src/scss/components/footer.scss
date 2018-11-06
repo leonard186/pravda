@@ -1,0 +1,64 @@
+@import "../base/mixins";
+
+.footer-underlay {
+grid-area: 11 / 1 / 11 / 11;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/header.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    &__about {
+      color: $text-footer-light;
+      width: 30%;
+
+
+      &-title{
+        @include headerUnderline($text-neutral-light);
+        font-weight: 400;
+        margin-bottom: 3rem;
+      }
+
+      &-text {
+        text-align: justify;
+        line-height: 1.6;
+      }
+
+      &-author {
+        color: $text-primary-light;
+      }
+    }
+
+  &__logo {
+    width: 30%;
+    display: flex;
+    align-items: center;
+
+    &__text-container{
+      font-size: 2.5rem;
+      margin-left: 1rem;
+    }
+
+    &__24 {
+      color: $color-standout;
+      font-weight: 300;
+    }
+
+     &__news {
+        color: $text-primary-light;
+      }
+
+    &__source {
+      color: $text-footer-light;
+      font-size: 1.6rem;
+      font-weight: 400;
+    }
+  }
+}

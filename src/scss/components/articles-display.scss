@@ -2,6 +2,7 @@
 
 .articles-display {
   padding: 3.7rem 0;
+  display: flex;
 
   &__content {
     width: 65%;
@@ -48,19 +49,7 @@
         display: table;
         font-family: $font-spaced;
         text-transform: uppercase;
-        position: relative;
-        border-bottom: 1px solid rgba($text-primary-dark, .3);
-
-        &::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          border-bottom: .2rem solid $color-standout-light;
-          z-index: 1;
-          height: 100%;
-          width: 30%;
-        }
+        @include headerUnderline($text-primary-dark);
       }
 
       &-description {
@@ -76,6 +65,63 @@
       font-size: 1.2rem;
       font-weight: 700;
       color: $text-neutral-dark
+    }
+  }
+
+  &__sidebar {
+    width: 35%;
+    padding-left: 3rem;
+
+    &__heading {
+      color: $text-primary-light;
+      background-color: $color-standout;
+      padding: 0 1.6rem;
+      font-weight: 400;
+      width: 100%;
+      border-bottom: 1px solid $text-primary-light;
+    }
+
+    &__container {
+
+      &-news {
+        display: grid;
+        grid-template-columns: min-content minmax(min-content, 1fr);
+        grid-template-rows: 3.5rem 7.5rem;
+        align-items: center;
+        background-color: $bg-primary-neutral;
+        color: $text-primary-light;
+        border-bottom: 1px solid $text-neutral-light;
+
+        &-img {
+          grid-column: 1 / 1;
+          grid-row: 1 / 3;
+          width: 10rem;
+          height: 8.5rem;
+          margin: 2rem;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        &-title {
+          grid-column: 2 / 2;
+          grid-row: 1 / 1;
+          line-height: 1;
+          align-self: end;
+        }
+
+        &-text {
+          grid-column: 2 / 2;
+          grid-row: 2 / 2;
+          line-height: 1.2;
+          align-self: start;
+          padding-top: 1rem;
+          color: $text-neutral-light;
+        }
+      }
     }
   }
 }

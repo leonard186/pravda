@@ -52,3 +52,20 @@
 
   }
 }
+
+//argument is border-bottom color
+@mixin headerUnderline($border-color) {
+  position: relative;
+  border-bottom: 1px solid rgba($border-color, .3);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom: .2rem solid $color-standout-light;
+    z-index: 1;
+    height: 100%;
+    width: 30%;
+  }
+}

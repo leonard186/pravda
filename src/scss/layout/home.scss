@@ -1,6 +1,6 @@
 .container{
   display: grid;
-  grid-template-rows: [top-menu] auto [logo] 13rem [categories] auto [countries] auto [header] 40rem [breaking] auto [headlines-display] 60rem [articles] 60rem [featured] 30rem [videos] 60rem [footer] 60rem [footer-end];
+  grid-template-rows: [top-menu] auto [logo] 13rem [categories] auto [countries] auto [header] 40rem [breaking] auto [headlines-display] 60rem [articles] auto [featured] 25rem [videos] 60rem [footer] 30rem [footer-end];
   grid-template-columns: 1fr repeat(8, [col-start] minmax(min-content, 16rem) [col-end]) 1fr;
 }
 
@@ -13,7 +13,7 @@
   grid-area: 1 / 8 / 1 / 10;
 }
 
-.logo-left {
+.logo-layout {
   grid-area: 2 / 2 / 2 / 4;
 }
 
@@ -43,4 +43,16 @@
 
 .articles-display {
   grid-area: 8 / 2 / 8 / 10;
+}
+
+.featured {
+  grid-area: 9 / 2 / 9 / 10;
+}
+
+.videos {
+  grid-area: 10 / 2 / 10 / 10;
+}
+
+.footer {
+  grid-area: 11 / 2 / 11 / 10;
 }

@@ -1,0 +1,37 @@
+@import "../base/mixins";
+
+.videos-underlay {
+  grid-area: 10 / 1 / 10 / 11;
+  background-color: $bg-secondary-standout-dark;
+  max-height: 60rem;
+  height: 100%;
+}
+
+.videos {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+
+  &__main {
+    display: table;
+  }
+
+  &__top,
+  &__bottom {
+    margin: 0 0 2rem 2rem;
+  }
+
+  &__sources {
+    order: 1;
+    margin: 0 0 2rem 2rem;
+    color: $text-neutral-light;
+    font-weight: 400;
+    width: 30rem;
+
+    @include headerUnderline($text-neutral-light)
+
+
+  }
+}

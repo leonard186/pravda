@@ -5,6 +5,7 @@ import GetSources from './models/EndPointSources';
 import {elements} from './views/Base';
 import {pushTime, getDate} from "./components/Timestamp";
 import * as article from './views/Article';
+import {twitter} from './models/twitter';
 
 const state = {};
 
@@ -47,6 +48,8 @@ const pushSingleHeadline = async () => {
     */
 };
 
+
+
 //pushSingleHeadline();
 
 //controlHeadlines();
@@ -57,4 +60,7 @@ elements.searchButton.addEventListener('click', e => {
     elements.articleNode.innerHTML = '';
     controlSearch();
 });*/
+
+
+//twitter();
 

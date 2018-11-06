@@ -1,4 +1,4 @@
-.logo-left {
+.logo-layout {
   width: 100%;
   height: 100%;
   display: flex;
@@ -7,7 +7,6 @@
   &__text-container {
     font-size: 2.5rem;
     margin-left: 1rem;
-
   }
 
   &__24 {
@@ -15,7 +14,7 @@
     font-weight: 300;
   }
 
-  &__news {
+  &__news{
     color: $text-primary-dark;
   }
 
@@ -70,6 +69,5 @@
       height: 100%;
       object-fit: cover;
     }
-
   }
 }

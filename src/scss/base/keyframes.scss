@@ -1,0 +1,18 @@
+@keyframes growFadeOut  {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  33% {
+    opacity: .05;
+  }
+  66% {
+    opacity: .3;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.7);
+  }
+}
