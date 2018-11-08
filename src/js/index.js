@@ -5,7 +5,7 @@ import GetSources from './models/EndPointSources';
 import {elements} from './views/Base';
 import {pushTime, getDate} from "./components/Timestamp";
 import * as article from './views/Article';
-import {twitter} from './models/twitter';
+import {getToken} from './models/twitter';
 
 const state = {};
 
@@ -62,5 +62,5 @@ elements.searchButton.addEventListener('click', e => {
 });*/
 
 
-//twitter();
+getToken();
 

@@ -45,8 +45,6 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
-    "newsapi": "^2.4.0",
-    "twit": "^2.2.11",
-    "twitter": "^1.7.1"
+    "newsapi": "^2.4.0"
   }
 }
