@@ -1,4 +1,5 @@
 import {renderTweets, twitterContainer} from '../views/tweets';
+import Ticker from '../components/ticker';
 import {twitterK} from "./keys";
 import Parser from '../components/textParser';
 
@@ -20,11 +21,13 @@ const request = (response) => {
             console.log(result);
             let parseTweets = new Parser(result.statuses);
             let tweets = parseTweets.parseTwitter();
+            let setTicker = new Ticker();
             //console.log(tweets.entities);
             twitterContainer.twitter.innerHTML = '';
             tweets.map(entry => {
                renderTweets(entry.user.screen_name, entry.text, entry.user.profile_image_url_https);
-            })
+            });
+            setTicker.sidebarTicker();
         })
         .catch(error => console.log('[ERROR] resource server endpoint: ' + error));
 };

@@ -16,3 +16,13 @@
     transform: scale(1.7);
   }
 }
+
+@keyframes scrollUp  {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translate(120px);
+  }
+}

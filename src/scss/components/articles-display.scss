@@ -4,9 +4,12 @@
   padding: 3.7rem 0;
   display: flex;
 
+
+  //articles container
   &__content {
     width: 65%;
 
+    //section title
     h2 {
       text-transform: uppercase;
       font-weight: 400;
@@ -24,6 +27,7 @@
     }
   }
 
+  //article wrapper
   &__wrap {
     display: flex;
     background-color: rgba($text-neutral-light, .2);
@@ -68,11 +72,13 @@
     }
   }
 
-  &__sidebar {
+
+  //sidebar / twitter feed
+  &__sidebar { //outer container
     width: 35%;
     padding-left: 3rem;
 
-    &__heading {
+    &__heading {  //section title
       color: $text-primary-light;
       background-color: $color-standout;
       padding: 0 1.6rem;
@@ -81,7 +87,20 @@
       border-bottom: 1px solid $text-primary-light;
     }
 
-    &__container {
+
+
+    &__container { //tweet container
+      position: relative;
+      overflow: hidden;
+      min-height: 11rem;
+      width: 100%;
+      z-index: 1;
+
+      &__ul {
+        position: absolute;
+        width: 100%;
+        top: 0;
+      }
 
       &-news {
         display: grid;
@@ -91,6 +110,10 @@
         background-color: $bg-primary-neutral;
         color: $text-primary-light;
         border-bottom: 1px solid $text-neutral-light;
+
+        &:last-child {
+          //opacity: 0;
+        }
 
         &-img {
           grid-column: 1 / 1;
@@ -130,19 +153,20 @@
 }
 
 .retweet {
-  color: red !important;
+  color: $text-twitter-blue !important;
 }
 
 .link {
-  color: red !important;
+  color: $text-twitter-blue !important;
+  font-size: 1.2rem;
 }
 
 .hashtag {
-  color: red;
+  color: $color-standout !important;
 }
 
-.mention {
-  color: red;
+.horizontalEllipsis {
+  color: $text-primary-light;
 }
 
 

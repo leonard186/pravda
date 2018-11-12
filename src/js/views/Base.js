@@ -9,6 +9,11 @@ export const elements = {
     headerNews: document.querySelector('.header__news-snippet')
 };
 
+export const sidebar = {
+    tickerContainer : document.querySelector('.articles-display__sidebar__container'),
+    tickerUl : document.querySelector('.articles-display__sidebar__container__ul'),
+};
+
 export const variables = {
     apiKey:'ec4010328c434b43a28619d8f4b0ac83'
 };
