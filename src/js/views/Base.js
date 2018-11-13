@@ -14,6 +14,10 @@ export const sidebar = {
     tickerUl : document.querySelector('.articles-display__sidebar__container__ul'),
 };
 
+export const breakingNews = {
+    ul: document.querySelector('.breaking__news__text > ul')
+}
+
 export const variables = {
     apiKey:'ec4010328c434b43a28619d8f4b0ac83'
 };

@@ -6,6 +6,7 @@ import {elements} from './views/Base';
 import {pushTime, getDate} from "./components/Timestamp";
 import * as article from './views/Article';
 import {getToken} from './models/twitter';
+import GetRSS from './models/RSSParse';
 
 
 const state = {};
@@ -62,4 +63,8 @@ elements.searchButton.addEventListener('click', e => {
     controlSearch();
 });*/
 
-getToken();
+//getToken();
+const reddit = new GetRSS('https://cors-anywhere.herokuapp.com/https://www.reddit.com/r/news/.rss');
+reddit.getResponse();
+const bbc = new GetRSS('https://cors-anywhere.herokuapp.com/http://feeds.bbci.co.uk/news/rss.xml');
+//bbc.getResponse();
