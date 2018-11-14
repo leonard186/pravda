@@ -1,4 +1,4 @@
-import {sidebar} from '../views/Base';
+import {sidebar, breakingNews} from '../views/Base';
 
 export default class Ticker {
     ///////////******    custom functions:   ******///////////
@@ -8,10 +8,85 @@ export default class Ticker {
         const childElements = document.querySelectorAll('.articles-display__sidebar__container__ul > *');
         this.setContainerSize('height', sidebar.tickerContainer, childElements);
         setInterval(()=> {
-            this.moveUp(sidebar.tickerUl, sidebar.tickerUl.children[1].offsetHeight, 5);
+            this.moveUp(sidebar.tickerUl, sidebar.tickerUl.children[1].offsetHeight, 6, 'up');
             sidebar.tickerUl.insertBefore(sidebar.tickerUl.firstElementChild, childElements.lastChild);
-            sidebar.tickerUl.style.transform = 'translateY(0px)';
         }, 5000);
+    }
+
+    //breaking news strip ticker
+    breakingNewsTicker() {
+        const childElements = document.querySelectorAll('.breaking__news__text__ul-li');
+        let index = 0;
+        let position = 0;
+        let scrollState = {
+            decrement: false,
+            increment: true
+        };
+
+        let totalHeight = 0;
+        [... childElements].map(element=> {
+            totalHeight += element.offsetHeight;
+        });
+
+        let scrollUp = (x = true)=> {
+            if(x !== true) {
+                clearInterval(autoScroll);
+                clearTimeout(timeout);
+                let timeout = setTimeout(()=> {
+                    autoScroll = setInterval(autoScrollLogic, 1000)
+                }, 10000);
+            }
+
+            if(index === childElements.length -1) {
+                breakingNews.left.disabled = true;
+                scrollState.increment = false;
+                scrollState.decrement = true;
+            } else {
+                breakingNews.ul.removeAttribute('style');
+                position += 40;
+                breakingNews.ul.style.transform += `translateY(-${position}px)`;
+                index++;
+                scrollState.increment = true;
+                scrollState.decrement = false;
+                console.log(scrollState);
+            }
+        };
+
+        let scrollDown = (x =  true)=> {
+            if(x !== true) {
+                clearInterval(autoScroll);
+                clearTimeout(timeout);
+                let timeout = setTimeout(()=> {
+                    autoScroll = setInterval(autoScrollLogic, 1000)
+                }, 10000);
+            }
+
+            if(index === 0) {
+                breakingNews.right.disabled = true;
+                scrollState.increment = true;
+                scrollState.decrement = false;
+            } else {
+                breakingNews.right.disabled = false;
+                scrollState.increment = false;
+                scrollState.decrement = true;
+                console.log(scrollState);
+                breakingNews.ul.removeAttribute('style');
+                position -= 40;
+                breakingNews.ul.style.transform += `translateY(-${position}px)`;
+                index--;
+            }
+        };
+
+        let autoScrollLogic = ()=> {
+            scrollState.increment === true ? scrollUp(true) : scrollDown(true);
+        };
+
+        let autoScroll = setInterval(autoScrollLogic, 1000);
+
+        breakingNews.left.addEventListener('click', scrollUp);
+
+        breakingNews.right.addEventListener('click', scrollDown);
+
     }
 
 
@@ -36,22 +111,30 @@ export default class Ticker {
 
 
     //move dom element to a certain direction
-    moveUp(elem, distance, speed) {
-        //animation function input parameters: target element, moving distance, speed
+    moveUp(elem, distance, speed, direction) {
+        //animation function input parameters: target element, moving distance per interval, speed, direction(up or down)
         elem.style.transform = `translateY(0px)`;
         let pos = 0;
         let id = setInterval(frame, speed);
         function frame() {
-            let negative = -Math.abs(distance);
-            //console.log(negative);
-            if(pos === negative) {
-                clearInterval(id)
-            } else {
-                pos--;
-                elem.style.transform = `translateY(${pos}px)`;
+            if(direction === 'up') {
+                let negative = -Math.abs(distance);
+                if(pos === negative) {
+                    clearInterval(id)
+                } else {
+                    pos--;
+                    elem.style.transform = `translateY(${pos}px)`;
+                }
+            } else if(direction === 'down') {
+                let positive = Math.abs(distance);
+                if(pos === positive) {
+                    clearInterval(id)
+                } else {
+                    pos++;
+                    elem.style.transform = `translateY(${pos}px)`;
+                }
             }
+
         }
     }
 };
-
-

@@ -5,7 +5,6 @@
   margin: 3.6rem 0 2.4rem 0;
   font-size: 1.6rem;
   height: 4rem;
-  overflow: hidden;
 
   &__title {
     background-color: $color-standout;
@@ -25,20 +24,15 @@
     color: $text-primary-light;
 
     &__text {
-      overflow: hidden;
       position: relative;
-
+      overflow: hidden;
+      width: 100%;
+      z-index: 1;
 
       &__ul {
         position: absolute;
-        top: 0;
-        left: 0;
-        transition: all .2s;
-        transform: translateX(0);
-
-        &-li{
-          display: block;
-        }
+        width: 100%;
+        transition: transform .5s;
       }
 
       &-title {
@@ -56,6 +50,7 @@
 
     &__arrows {
       @include resetArrow($text-neutral-light, $text-primary-light, 1.8rem);
+      width: 2.7rem;
     }
   }
 }

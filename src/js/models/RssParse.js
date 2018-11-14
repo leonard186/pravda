@@ -10,14 +10,9 @@ export default class GetRSS {
     }
 
     async getResponse() {
-            let feed = await parser.parseURL(this.rssSource);
-            //console.log(feed);
-        renderBreakingNews(feed)
+        let feed = await parser.parseURL(this.rssSource);
 
-          /*  feed.items.forEach(item => {
-                console.log(item);
-                renderBreakingNews();
-            });*/
+        renderBreakingNews(feed);
 
     }
 }

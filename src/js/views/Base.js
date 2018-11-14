@@ -15,8 +15,10 @@ export const sidebar = {
 };
 
 export const breakingNews = {
-    ul: document.querySelector('.breaking__news__text > ul')
-}
+    ul: document.querySelector('.breaking__news__text > ul'),
+    left: document.querySelector('.breaking__news__arrows-left'),
+    right: document.querySelector('.breaking__news__arrows-right'),
+};
 
 export const variables = {
     apiKey:'ec4010328c434b43a28619d8f4b0ac83'

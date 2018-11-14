@@ -139,8 +139,7 @@ body {
   display: flex;
   margin: 3.6rem 0 2.4rem 0;
   font-size: 1.6rem;
-  height: 4rem;
-  overflow: hidden; }
+  height: 4rem; }
   .breaking__title {
     background-color: #d4000e;
     color: #fff;
@@ -156,16 +155,14 @@ body {
     background-color: #212126;
     color: #fff; }
     .breaking__news__text {
+      position: relative;
       overflow: hidden;
-      position: relative; }
+      width: 100%;
+      z-index: 1; }
       .breaking__news__text__ul {
         position: absolute;
-        top: 0;
-        left: 0;
-        transition: all .2s;
-        transform: translateX(0); }
-        .breaking__news__text__ul-li {
-          display: block; }
+        width: 100%;
+        transition: transform .5s; }
       .breaking__news__text-title {
         font-size: 1.6rem;
         font-weight: 400;
@@ -174,17 +171,19 @@ body {
         font-size: 1.6rem;
         font-weight: 400;
         color: #CCC; }
-    .breaking__news__arrows * {
-      border: none;
-      background-color: transparent;
-      color: #CCC;
-      font-size: 1.8rem;
-      padding: 0 .1rem;
-      transition: all .2s; }
-      .breaking__news__arrows *:hover, .breaking__news__arrows *:active, .breaking__news__arrows *:focus {
-        cursor: pointer;
-        color: #fff;
-        outline: none; }
+    .breaking__news__arrows {
+      width: 2.7rem; }
+      .breaking__news__arrows * {
+        border: none;
+        background-color: transparent;
+        color: #CCC;
+        font-size: 1.8rem;
+        padding: 0 .1rem;
+        transition: all .2s; }
+        .breaking__news__arrows *:hover, .breaking__news__arrows *:active, .breaking__news__arrows *:focus {
+          cursor: pointer;
+          color: #fff;
+          outline: none; }
 
 .headlines-list__underlay {
   background-color: #d4000e;

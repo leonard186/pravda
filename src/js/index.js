@@ -63,7 +63,7 @@ elements.searchButton.addEventListener('click', e => {
     controlSearch();
 });*/
 
-//getToken();
+getToken();
 const reddit = new GetRSS('https://cors-anywhere.herokuapp.com/https://www.reddit.com/r/news/.rss');
 reddit.getResponse();
 const bbc = new GetRSS('https://cors-anywhere.herokuapp.com/http://feeds.bbci.co.uk/news/rss.xml');
