@@ -20,6 +20,12 @@ export const breakingNews = {
     right: document.querySelector('.breaking__news__arrows-right'),
 };
 
+export const headlines = {
+    left: document.querySelector('.headlines-display__arrows-left'),
+    right: document.querySelector('.headlines-display__arrows-right'),
+    container: document.querySelector('.headlines-display__slider-wrap')
+};
+
 export const variables = {
     apiKey:'ec4010328c434b43a28619d8f4b0ac83'
 };

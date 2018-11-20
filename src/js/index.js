@@ -2,11 +2,13 @@ import '../scss/main.scss';
 import GetNews from './models/EndPointEverything';
 import GetHeadlines from './models/EndPointHeadlines';
 import GetSources from './models/EndPointSources';
-import {elements} from './views/Base';
+import {breakingNews, elements} from './views/Base';
 import {pushTime, getDate} from "./components/Timestamp";
 import * as article from './views/Article';
 import {getToken} from './models/twitter';
 import GetRSS from './models/RSSParse';
+import Ticker from "./components/ticker";
+import {headlines} from "./views/Base";
 
 
 const state = {};
@@ -68,3 +70,15 @@ const reddit = new GetRSS('https://cors-anywhere.herokuapp.com/https://www.reddi
 reddit.getResponse();
 const bbc = new GetRSS('https://cors-anywhere.herokuapp.com/http://feeds.bbci.co.uk/news/rss.xml');
 //bbc.getResponse();
+
+//create Ticker instance with parameters
+let ticker = new Ticker({
+    childElements: document.querySelectorAll('.headlines-display__container'),
+    parent: headlines.container,
+    leftButton: headlines.left,
+    rightButton: headlines.right,
+    axis: 'X'
+});
+
+//start the ticker
+ticker.Ticker();

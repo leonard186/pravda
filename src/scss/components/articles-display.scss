@@ -111,10 +111,6 @@
         color: $text-primary-light;
         border-bottom: 1px solid $text-neutral-light;
 
-        &:last-child {
-          //opacity: 0;
-        }
-
         &-img {
           grid-column: 1 / 1;
           grid-row: 1 / 3;

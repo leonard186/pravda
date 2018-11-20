@@ -21,33 +21,39 @@
     grid-area: arrow-right;
   }
 
-  &__slider-wrap {
+  &__slider {
     grid-area: container;
     position: relative;
     overflow: hidden;
+
+    &-wrap {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      transition: transform .35s ease-in;
+
+    }
   }
   &__container {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    width: 100%;
+    height: 100%;
+    transition: opacity .5s ease-in;
 
-    &-1 {
-      left: -100%;
-    }
 
-    &-2 {
-      left: 100%;
-    }
 
     * {
       width: 100%;
       height: 100%;
       padding: 1rem;
       position: relative;
+      z-index: 1;
     }
   }
 

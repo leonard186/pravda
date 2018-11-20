@@ -10,8 +10,8 @@ export const renderBreakingNews = (rawData)=> {
         e.title.length < 80 ? dataToDisplay.push(e) :  null;
     });
 
-    //render fitlered titles to the DOM
-    dataToDisplay.map((elem, index)=> {
+    //render filtered titles to the DOM
+    dataToDisplay.map((elem)=> {
           breakingNews.ul.innerHTML +=
               `
                   <li class="breaking__news__text__ul-li">
@@ -19,6 +19,16 @@ export const renderBreakingNews = (rawData)=> {
                   </li>
               `
       });
-    startTicker.breakingNewsTicker();
 
+    //create Ticker instance with parameters
+    let ticker = new Ticker({
+        childElements: document.querySelectorAll('.breaking__news__text__ul-li'),
+        parent: breakingNews.ul,
+        leftButton: breakingNews.left,
+        rightButton: breakingNews.right,
+        axis: 'Y'
+    });
+
+    //start the ticker
+    ticker.Ticker();
 };
