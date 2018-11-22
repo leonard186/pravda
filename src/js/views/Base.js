@@ -16,8 +16,8 @@ export const sidebar = {
 
 export const breakingNews = {
     ul: document.querySelector('.breaking__news__text > ul'),
-    left: document.querySelector('.breaking__news__arrows-left'),
-    right: document.querySelector('.breaking__news__arrows-right'),
+    left: document.getElementById('breaking-left'),
+    right: document.getElementById('breaking-right'),
 };
 
 export const headlines = {

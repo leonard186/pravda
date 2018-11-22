@@ -615,15 +615,14 @@ body {
       height: 100%;
       display: flex;
       flex-wrap: wrap;
-      flex-direction: column;
-      transition: transform .35s ease-in; }
+      flex-direction: column; }
   .headlines-display__container {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     width: 100%;
     height: 100%;
-    transition: opacity .5s ease-in; }
+    transition: opacity 1s ease-in; }
     .headlines-display__container * {
       width: 100%;
       height: 100%;

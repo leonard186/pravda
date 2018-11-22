@@ -26,9 +26,10 @@ export const renderBreakingNews = (rawData)=> {
         parent: breakingNews.ul,
         leftButton: breakingNews.left,
         rightButton: breakingNews.right,
-        axis: 'Y'
+        axis: 'Y',
+        tickerInterval: 3
     });
 
     //start the ticker
-    ticker.Ticker();
+    ticker.init();
 };

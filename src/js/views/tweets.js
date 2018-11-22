@@ -1,3 +1,6 @@
+import Ticker from "../components/ticker";
+import {sidebar} from "./Base";
+
 export const twitterContainer = {
     twitter: document.querySelector('.articles-display__sidebar__container__ul'),
 };
@@ -12,5 +15,5 @@ export const renderTweets = (name, text, img) => {
                     <a href="https://twitter.com/${name}" class="articles-display__sidebar__container-news-title"><h3>${name}</h3></a>
                     <p class="articles-display__sidebar__container-news-text">${text}</p>
               </li>      
-        `
+        `;
 };

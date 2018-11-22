@@ -87,12 +87,11 @@
       border-bottom: 1px solid $text-primary-light;
     }
 
-
-
     &__container { //tweet container
       position: relative;
       overflow: hidden;
       min-height: 11rem;
+
       width: 100%;
       z-index: 1;
 
@@ -100,6 +99,7 @@
         position: absolute;
         width: 100%;
         top: 0;
+        //transition: transform 0.5s ease-in;
       }
 
       &-news {

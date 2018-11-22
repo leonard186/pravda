@@ -2,6 +2,7 @@ import {renderTweets, twitterContainer} from '../views/tweets';
 import Ticker from '../components/ticker';
 import {twitterK} from "./keys";
 import Parser from '../components/textParser';
+import {sidebar} from "../views/Base";
 
 let baseURL = 'https://cors-anywhere.herokuapp.com/https://api.twitter.com/oauth2/token';
 let base64Key = twitterK[0].concat(twitterK[1], twitterK[2], twitterK[3]);
@@ -18,16 +19,22 @@ const request = (response) => {
         headers: {'Authorization' : response}
     }).then(promise => promise.json())
         .then(result => {
-            console.log(result);
+            //console.log(result);
             let parseTweets = new Parser(result.statuses);
             let tweets = parseTweets.parseTwitter();
-            let setTicker = new Ticker();
-            //console.log(tweets.entities);
             twitterContainer.twitter.innerHTML = '';
             tweets.map(entry => {
                renderTweets(entry.user.screen_name, entry.text, entry.user.profile_image_url_https);
             });
-            setTicker.sidebarTicker();
+
+            //create new ticker instance and set the parameters
+            let setTicker =  new Ticker({
+                childElements: document.querySelectorAll('.articles-display__sidebar__container-news'),
+                parentWrap: sidebar.tickerContainer,
+                parent: sidebar.tickerUl,
+                axis: 'Y'
+            });
+            setTicker.sidebarTicker();//start ticker
         })
         .catch(error => console.log('[ERROR] resource server endpoint: ' + error));
 };

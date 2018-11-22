@@ -77,8 +77,10 @@ let ticker = new Ticker({
     parent: headlines.container,
     leftButton: headlines.left,
     rightButton: headlines.right,
-    axis: 'X'
+    axis: 'X',
+    fadeIn: true,
+    tickerInterval: 5
 });
 
 //start the ticker
-ticker.Ticker();
+ticker.init();
