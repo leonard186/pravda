@@ -1,18 +1,48 @@
 import '../scss/main.scss';
 import GetNews from './models/EndPointEverything';
-import GetHeadlines from './models/EndPointHeadlines';
-import GetSources from './models/EndPointSources';
-import {breakingNews, elements} from './views/Base';
 import {pushTime, getDate} from "./components/Timestamp";
 import * as article from './views/Article';
+import {executeSearch} from "./views/Article";
 import {getToken} from './models/twitter';
 import GetRSS from './models/RSSParse';
-import Ticker from "./components/ticker";
-import {headlines} from "./views/Base";
+import {headlinesPopulateState, assignHeadlineButtons, headlineTicker} from "./views/Headline";
+import {clickAndEnter} from "./components/helperFunctions";
+import {menuSearch} from "./views/Base";
+import {userQuery} from "./views/Article";
 
 
-const state = {};
+export const state = {};
 
+
+
+userQuery('latest');
+//////////////************* Initiate HEADLINES **************/////////////////
+//initiate state population with categories
+headlinesPopulateState();
+//render initial content
+state.business.getHeadlinesByCountry();
+//assign headline buttons
+assignHeadlineButtons();
+//start the ticker effect
+headlineTicker.init();
+//////////////************* END **************/////////////////
+
+
+//////////////************* Initiate Top Menu Search **************/////////////////
+//trigger search and add search query to state
+clickAndEnter(menuSearch.input, menuSearch.button, userQuery);
+//////////////************* END **************/////////////////
+
+
+
+
+
+
+
+
+
+
+/*
 const controlSearch = async () => {
     const query = article.getInput();
     console.log(query);
@@ -21,6 +51,8 @@ const controlSearch = async () => {
         await state.searchByQuery.getResponse();
     }
 };
+
+
 
 const controlHeadlines = async () => {
     const category = 'entertainment';
@@ -49,8 +81,8 @@ const pushSingleHeadline = async () => {
         state.singleHeadline.getResponse();
         console.log(page)
     }, 5000)
-    */
-};
+
+};*/
 
 
 
@@ -71,16 +103,5 @@ reddit.getResponse();
 const bbc = new GetRSS('https://cors-anywhere.herokuapp.com/http://feeds.bbci.co.uk/news/rss.xml');
 //bbc.getResponse();
 
-//create Ticker instance with parameters
-let ticker = new Ticker({
-    childElements: document.querySelectorAll('.headlines-display__container'),
-    parent: headlines.container,
-    leftButton: headlines.left,
-    rightButton: headlines.right,
-    axis: 'X',
-    fadeIn: true,
-    tickerInterval: 5
-});
 
-//start the ticker
-ticker.init();
+

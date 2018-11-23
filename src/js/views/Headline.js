@@ -1,19 +1,45 @@
-import {elements} from './Base';
+import {headlines,categories} from './Base';
+import GetNews from "../models/EndPointEverything";
+import {state} from '../index';
+import Ticker from "../components/ticker";
 
-export const renderHeadlines = (data) => {
-    return elements.headlinesNode.innerHTML +=
-        `<div class="article-wrapper article-wrapper__headline">
-              <h1>${data.title}</h1>
-              <img src="${data.urlToImage}" alt="descriptive image of news article"/>
-              <p>${data.description}</p>
-              <p>${data.content}</p>
-              <a href="${data.url}" target="_blank">Read More</a>
-         </div>
-        `;
+export const renderHeadlines = (array) => {
+    headlines.article.forEach((element, index)=> {
+        element.innerHTML =
+            `<img src="${array[index].urlToImage}" alt="headline placeholder 2" class="headlines-display__image">
+            <div class="headlines-display__text-container">
+                <h3 class="headlines-display__title">${array[index].source.name}</h3>
+                <p class="headlines-display__content">${array[index].title}</p>
+            </div>`
+    });
 };
 
-export const pushSingleHeadline = (data) => {
-    return elements.headerNews.innerHTML =
-        `<h2 class="header__news-title">${data.title}</h2>
-        <p class="header__news-info">${data.description}</p>`
+//populate state with categories
+export const headlinesPopulateState = ()=> {
+    categories.forEach((category) => {
+        state[category] = new GetNews({country: 'gb', category: category});
+    })
 };
+
+//assign category button their corresponding category
+export const assignHeadlineButtons = ()=> {
+    let buttons = document.querySelectorAll('.headlines-list__btn-group-button');
+    buttons.forEach((button, index) => {
+        button.addEventListener('click', ()=>{
+            state[categories[index]].getHeadlinesByCountry();
+        })
+    })
+};
+
+//create Ticker instance with parameters
+export const headlineTicker = new Ticker({
+    childElements: document.querySelectorAll('.headlines-display__container'),
+    parent: headlines.container,
+    leftButton: headlines.left,
+    rightButton: headlines.right,
+    axis: 'X',
+    fadeIn: true,
+    tickerInterval: 10
+});
+
+

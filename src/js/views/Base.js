@@ -1,13 +1,13 @@
 export const elements = {
     searchInput: document.getElementById('search'),
     searchButton: document.getElementById('search-button'),
-    articleNode: document.getElementById('articles'),
-    headlinesNode: document.getElementById('headlines'),
+    articleNode: document.querySelector('.articles-display__content'),
     sectionNode: document.getElementById('sources'),
     dateNode: document.getElementById('header-date'),
     timeNode: document.getElementById('header-time'),
     headerNews: document.querySelector('.header__news-snippet')
 };
+export const categories = ['business', 'entertainment', 'general', 'health', 'science', 'sports', 'technology'];
 
 export const sidebar = {
     tickerContainer : document.querySelector('.articles-display__sidebar__container'),
@@ -23,9 +23,11 @@ export const breakingNews = {
 export const headlines = {
     left: document.querySelector('.headlines-display__arrows-left'),
     right: document.querySelector('.headlines-display__arrows-right'),
-    container: document.querySelector('.headlines-display__slider-wrap')
+    container: document.querySelector('.headlines-display__slider-wrap'),
+    article: document.querySelectorAll('.headlines-display__container > article')
 };
 
-export const variables = {
-    apiKey:'ec4010328c434b43a28619d8f4b0ac83'
-};
+export const menuSearch = {
+    input: document.querySelector('.top-menu__search-input'),
+    button: document.getElementById('search-button')
+}

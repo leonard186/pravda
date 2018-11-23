@@ -2,21 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7bc5b05c-d158-4a7b-8d23-129197ceebae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/js/models/GuardianAPI.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/js/components/helperFunctions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/dist/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/js/bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/style.prefix.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/style.prefix.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/components/ticker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/components/ticker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/models/EndPointEverything.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/models/EndPointEverything.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/models/EndPointHeadlines.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/models/EndPointSources.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/models/GuardianAPI.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/models/GuardianAPI.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/models/SelectByCountry.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/models/keys.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/models/keys.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/models/twitter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/models/twitter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/views/Article.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/views/Article.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/js/views/Base.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/views/Base.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/views/BreakingNews.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/views/BreakingNews.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/views/tweets.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/views/tweets.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/articles-display.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/articles-display.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/components/headlines-display.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/headlines-display.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/views/Headline.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/views/Headline.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -100,7 +98,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="665Z--c326bdde64179aadf5246fd67b2a3f42fb5d460b" value="1" />
-          <entry key="js" value="28" />
+          <entry key="js" value="47" />
           <entry key="json" value="2" />
           <entry key="md" value="1" />
           <entry key="scss" value="6" />
@@ -110,7 +108,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JSON" value="2" />
-          <entry key="JavaScript" value="28" />
+          <entry key="JavaScript" value="47" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="SCSS" value="6" />
@@ -118,8 +116,8 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="190" />
-          <entry key="js" value="22622" />
+          <entry key="html" value="233" />
+          <entry key="js" value="29594" />
           <entry key="json" value="16" />
           <entry key="scss" value="1216" />
           <entry key="twitter_config" value="2" />
@@ -127,9 +125,9 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="204" />
+          <entry key="HTML" value="263" />
           <entry key="JSON" value="16" />
-          <entry key="JavaScript" value="22608" />
+          <entry key="JavaScript" value="29564" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="SCSS" value="1216" />
         </counts>
@@ -137,20 +135,16 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.37224537">
+    <splitter split-orientation="horizontal" split-proportion="0.5782689">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="414">
-                  <caret line="331" column="76" selection-start-line="331" selection-start-column="35" selection-end-line="331" selection-end-column="76" />
+                <state relative-caret-position="175">
+                  <caret line="258" column="49" selection-start-line="258" selection-start-column="24" selection-end-line="258" selection-end-column="49" />
                   <folding>
                     <element signature="n#nav#1;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#0;n#div#0;n#div#2;n#section#3;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#article#0;n#div#0;n#div#0;n#div#2;n#section#3;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#article#1;n#div#0;n#div#0;n#div#2;n#section#3;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#article#2;n#div#0;n#div#0;n#div#2;n#section#3;n#body#0;n#html#0;n#!!top" />
                     <element signature="n#div#1;n#div#0;n#div#2;n#section#3;n#body#0;n#html#0;n#!!top" />
                     <element signature="n#article#0;n#div#1;n#div#0;n#div#2;n#section#3;n#body#0;n#html#0;n#!!top" />
                     <element signature="n#article#1;n#div#1;n#div#0;n#div#2;n#section#3;n#body#0;n#html#0;n#!!top" />
@@ -159,59 +153,43 @@
                     <element signature="n#article#0;n#div#2;n#div#0;n#div#2;n#section#3;n#body#0;n#html#0;n#!!top" />
                     <element signature="n#article#1;n#div#2;n#div#0;n#div#2;n#section#3;n#body#0;n#html#0;n#!!top" />
                     <element signature="n#article#2;n#div#2;n#div#0;n#div#2;n#section#3;n#body#0;n#html#0;n#!!top" />
+                    <element signature="n#div#0;n#div#0;n#section#4;n#body#0;n#html#0;n#!!top" />
                     <element signature="n#div#1;n#div#0;n#section#4;n#body#0;n#html#0;n#!!top" />
                     <element signature="n#div#2;n#div#0;n#section#4;n#body#0;n#html#0;n#!!top" />
                     <element signature="n#div#3;n#div#0;n#section#4;n#body#0;n#html#0;n#!!top" />
                     <element signature="n#div#4;n#div#0;n#section#4;n#body#0;n#html#0;n#!!top" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/js/models/RssParse.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="345">
-                  <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/js/views/BreakingNews.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="69">
-                  <caret line="3" column="47" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="47" />
-                  <folding>
-                    <element signature="e#0#36#0" expanded="true" />
+                    <element signature="n#div#1;n#section#4;n#body#0;n#html#0;n#!!top" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/js/models/EndPointEverything.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="299">
+                  <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+                  <folding>
+                    <element signature="e#0#47#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/js/views/Base.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="345">
-                  <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+                <state relative-caret-position="713">
+                  <caret line="31" column="52" selection-start-line="31" selection-start-column="52" selection-end-line="31" selection-end-column="52" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/scss/components/breaking.scss">
+            <entry file="file://$PROJECT_DIR$/src/js/components/helperFunctions.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="506">
-                  <caret line="34" column="41" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/js/views/Headline.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="414">
-                  <caret line="18" column="2" lean-forward="true" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
+                <state relative-caret-position="253">
+                  <caret line="11" column="2" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
                 </state>
               </provider>
             </entry>
@@ -221,40 +199,10 @@
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/js/components/ticker.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="29">
-                  <caret line="60" column="82" selection-start-line="60" selection-start-column="82" selection-end-line="60" selection-end-column="82" />
-                  <folding>
-                    <element signature="e#0#52#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/js/models/keys.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="23">
-                  <caret line="1" column="75" selection-start-line="1" selection-start-column="75" selection-end-line="1" selection-end-column="75" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/webpack.config.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="368">
-                  <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/js/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="713">
-                  <caret line="85" column="14" lean-forward="true" selection-start-line="85" selection-start-column="14" selection-end-line="85" selection-end-column="14" />
+                <state relative-caret-position="414">
+                  <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
                   <folding>
                     <element signature="e#0#27#0" expanded="true" />
                   </folding>
@@ -262,53 +210,26 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/js/views/tweets.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="391">
-                  <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
-                  <folding>
-                    <element signature="e#0#42#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/js/models/twitter.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="161">
-                  <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="74" />
-                  <folding>
-                    <element signature="e#0#63#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/js/models/GuardianAPI.js">
+            <entry file="file://$PROJECT_DIR$/src/js/views/Article.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="46">
-                  <caret line="2" column="72" lean-forward="true" selection-start-line="2" selection-start-column="72" selection-end-line="2" selection-end-column="72" />
+                <state relative-caret-position="575">
+                  <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+                  <folding>
+                    <element signature="e#0#44#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/scss/components/articles-display.scss">
+            <entry file="file://$PROJECT_DIR$/src/js/views/Headline.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="508">
-                  <caret line="101" column="10" selection-start-line="101" selection-start-column="10" selection-end-line="101" selection-end-column="10" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/scss/components/headlines-display.scss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="704">
-                  <caret line="48" column="7" lean-forward="true" selection-start-line="48" selection-start-column="7" selection-end-line="48" selection-end-column="7" />
+                <state relative-caret-position="520">
+                  <caret line="31" column="2" lean-forward="true" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="2" />
+                  <folding>
+                    <element signature="e#0#44#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -357,6 +278,7 @@
       <find>sidebar</find>
       <find>count.position</find>
       <find>console.log(array)</find>
+      <find>variables</find>
     </findStrings>
     <replaceStrings>
       <replace>let</replace>
@@ -368,16 +290,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/js/views/article.js" />
         <option value="$PROJECT_DIR$/src/js/views/base.js" />
         <option value="$PROJECT_DIR$/src/scss/components/article.scss" />
         <option value="$PROJECT_DIR$/src/scss/components/headline.scss" />
         <option value="$PROJECT_DIR$/src/scss/components/headlines.scss" />
-        <option value="$PROJECT_DIR$/src/js/views/Article.js" />
         <option value="$PROJECT_DIR$/src/js/views/Sources.js" />
-        <option value="$PROJECT_DIR$/src/js/models/EndPointSources.js" />
         <option value="$PROJECT_DIR$/src/js/models/SelectByCountry.js" />
-        <option value="$PROJECT_DIR$/src/js/models/EndPointEverything.js" />
         <option value="$PROJECT_DIR$/src/scss/components/stories-by-country-display.scss" />
         <option value="$PROJECT_DIR$/dist/index.html" />
         <option value="$PROJECT_DIR$/src/scss/main.scss" />
@@ -385,9 +303,7 @@
         <option value="$PROJECT_DIR$/src/scss/components/headlines-list.scss" />
         <option value="$PROJECT_DIR$/src/js/components/Timestamp.js" />
         <option value="$PROJECT_DIR$/src/scss/base/typography.scss" />
-        <option value="$PROJECT_DIR$/src/js/views/Headline.js" />
         <option value="$PROJECT_DIR$/src/scss/components/header.scss" />
-        <option value="$PROJECT_DIR$/src/js/models/EndPointHeadlines.js" />
         <option value="$PROJECT_DIR$/src/scss/components/articles-list.scss" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
@@ -408,17 +324,23 @@
         <option value="$PROJECT_DIR$/src/js/components/RSSParser.js" />
         <option value="$PROJECT_DIR$/src/js/models/RssParse.js" />
         <option value="$PROJECT_DIR$/src/scss/components/breaking.scss" />
-        <option value="$PROJECT_DIR$/src/index.html" />
         <option value="$PROJECT_DIR$/src/scss/components/headlines-display.scss" />
-        <option value="$PROJECT_DIR$/src/js/views/Base.js" />
         <option value="$PROJECT_DIR$/src/js/views/BreakingNews.js" />
-        <option value="$PROJECT_DIR$/src/js/index.js" />
         <option value="$PROJECT_DIR$/src/js/views/tweets.js" />
         <option value="$PROJECT_DIR$/src/scss/components/articles-display.scss" />
         <option value="$PROJECT_DIR$/src/js/models/twitter.js" />
         <option value="$PROJECT_DIR$/src/js/components/ticker.js" />
         <option value="$PROJECT_DIR$/src/js/models/keys.js" />
+        <option value="$PROJECT_DIR$/src/js/models/EndPointHeadlines.js" />
+        <option value="$PROJECT_DIR$/src/js/models/EndPointSources.js" />
+        <option value="$PROJECT_DIR$/src/index.html" />
+        <option value="$PROJECT_DIR$/src/js/views/Base.js" />
         <option value="$PROJECT_DIR$/src/js/models/GuardianAPI.js" />
+        <option value="$PROJECT_DIR$/src/js/views/Headline.js" />
+        <option value="$PROJECT_DIR$/src/js/components/helperFunctions.js" />
+        <option value="$PROJECT_DIR$/src/js/index.js" />
+        <option value="$PROJECT_DIR$/src/js/views/Article.js" />
+        <option value="$PROJECT_DIR$/src/js/models/EndPointEverything.js" />
       </list>
     </option>
   </component>
@@ -439,10 +361,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="-2030" />
+    <option name="y" value="52" />
+    <option name="width" value="1934" />
+    <option name="height" value="780" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -577,15 +499,15 @@
       <workItem from="1542018095249" duration="23079000" />
       <workItem from="1542094114737" duration="8820000" />
       <workItem from="1542187227626" duration="23379000" />
-      <workItem from="1542295141126" duration="75637000" />
+      <workItem from="1542295141126" duration="120668000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="353333000" />
+    <option name="totallyTimeSpent" value="398364000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-1928" y="1" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -615,24 +537,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/scss/components/articles-list.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="29" lean-forward="true" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/models/EndPointHeadlines.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/models/twitter" />
-    <entry file="file://$PROJECT_DIR$/node_modules/twit/lib/twitter.js" />
-    <entry file="file://$PROJECT_DIR$/node_modules/twit/lib/streaming-api-connection.js" />
-    <entry file="file://$PROJECT_DIR$/node_modules/twit/examples/bot.js" />
     <entry file="file://$PROJECT_DIR$/node_modules/twit/tests/twit.js" />
     <entry file="file://$PROJECT_DIR$/src/js/views/Sources.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -687,13 +591,6 @@
     <entry file="file://$PROJECT_DIR$/node_modules/twitter-node-client/README.md" />
     <entry file="file://$PROJECT_DIR$/node_modules/twitter-node-client/index.js" />
     <entry file="file://$PROJECT_DIR$/src/data/twitter_config" />
-    <entry file="file://$PROJECT_DIR$/src/js/components/Timestamp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
-          <caret line="29" column="40" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1150">
@@ -712,13 +609,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="552">
           <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/models/EndPointEverything.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="713">
-          <caret line="33" column="9" lean-forward="true" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -750,13 +640,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="598">
           <caret line="26" column="3" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/components/textParser.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
-          <caret line="28" column="1" lean-forward="true" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -793,27 +676,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scss/components/breaking.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="34" column="41" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/views/Headline.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="18" column="2" lean-forward="true" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/scss/components/headlines-display.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="704">
@@ -821,53 +683,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.html">
+    <entry file="file://$PROJECT_DIR$/src/scss/components/articles-display.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="331" column="76" selection-start-line="331" selection-start-column="35" selection-end-line="331" selection-end-column="76" />
-          <folding>
-            <element signature="n#nav#1;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#2;n#section#3;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#article#0;n#div#0;n#div#0;n#div#2;n#section#3;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#article#1;n#div#0;n#div#0;n#div#2;n#section#3;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#article#2;n#div#0;n#div#0;n#div#2;n#section#3;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#div#2;n#section#3;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#article#0;n#div#1;n#div#0;n#div#2;n#section#3;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#article#1;n#div#1;n#div#0;n#div#2;n#section#3;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#article#2;n#div#1;n#div#0;n#div#2;n#section#3;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#2;n#div#0;n#div#2;n#section#3;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#article#0;n#div#2;n#div#0;n#div#2;n#section#3;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#article#1;n#div#2;n#div#0;n#div#2;n#section#3;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#article#2;n#div#2;n#div#0;n#div#2;n#section#3;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#section#4;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#2;n#div#0;n#section#4;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#3;n#div#0;n#section#4;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#4;n#div#0;n#section#4;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/models/RssParse.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/views/BreakingNews.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="47" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/views/Base.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="508">
+          <caret line="101" column="10" selection-start-line="101" selection-start-column="10" selection-end-line="101" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -881,54 +700,183 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scss/components/articles-display.scss">
+    <entry file="file://$PROJECT_DIR$/src/scss/components/breaking.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="101" column="10" selection-start-line="101" selection-start-column="10" selection-end-line="101" selection-end-column="10" />
+        <state relative-caret-position="506">
+          <caret line="34" column="41" selection-start-line="34" selection-start-column="41" selection-end-line="34" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/index.js">
+    <entry file="file://$PROJECT_DIR$/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="713">
-          <caret line="85" column="14" lean-forward="true" selection-start-line="85" selection-start-column="14" selection-end-line="85" selection-end-column="14" />
+        <state relative-caret-position="175">
+          <caret line="258" column="49" selection-start-line="258" selection-start-column="24" selection-end-line="258" selection-end-column="49" />
           <folding>
-            <element signature="e#0#27#0" expanded="true" />
+            <element signature="n#nav#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#div#2;n#section#3;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#article#0;n#div#1;n#div#0;n#div#2;n#section#3;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#article#1;n#div#1;n#div#0;n#div#2;n#section#3;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#article#2;n#div#1;n#div#0;n#div#2;n#section#3;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#2;n#div#0;n#div#2;n#section#3;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#article#0;n#div#2;n#div#0;n#div#2;n#section#3;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#article#1;n#div#2;n#div#0;n#div#2;n#section#3;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#article#2;n#div#2;n#div#0;n#div#2;n#section#3;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#0;n#div#0;n#section#4;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#section#4;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#2;n#div#0;n#section#4;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#3;n#div#0;n#section#4;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#4;n#div#0;n#section#4;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#1;n#section#4;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/components/ticker.js">
+    <entry file="file://$PROJECT_DIR$/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="60" column="82" selection-start-line="60" selection-start-column="82" selection-end-line="60" selection-end-column="82" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="368">
+          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/models/keys.js">
+    <entry file="file://$PROJECT_DIR$/src/js/models/EndPointHeadlines.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
-          <caret line="1" column="75" selection-start-line="1" selection-start-column="75" selection-end-line="1" selection-end-column="75" />
+          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/models/twitter.js">
+    <entry file="file://$PROJECT_DIR$/src/js/models/EndPointSources.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="74" />
+        <state relative-caret-position="46">
+          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
           <folding>
-            <element signature="e#0#63#0" expanded="true" />
+            <element signature="e#0#40#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/models/GuardianAPI.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/models/SelectByCountry.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/models/twitter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="43" lean-forward="true" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/components/textParser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="27" column="4" lean-forward="true" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/components/Timestamp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="667">
+          <caret line="29" column="40" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/components/ticker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2087">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/views/BreakingNews.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="47" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/models/RssParse.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/models/ErrorHandler.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/models/keys.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
-          <caret line="2" column="72" lean-forward="true" selection-start-line="2" selection-start-column="72" selection-end-line="2" selection-end-column="72" />
+          <caret line="2" column="70" selection-start-line="2" selection-start-column="61" selection-end-line="2" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/views/Base.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="713">
+          <caret line="31" column="52" selection-start-line="31" selection-start-column="52" selection-end-line="31" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/components/helperFunctions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="2" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/views/Headline.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="31" column="2" lean-forward="true" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/views/Article.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/models/EndPointEverything.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
