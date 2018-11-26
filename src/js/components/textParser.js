@@ -23,7 +23,6 @@ export default class Parser {
                 elem.text = elem.text.replace(rules.horEllipsis, `<a href="https://twitter.com/${elem.user.screen_name}" class="horizontalEllipsis">…</a>`);
                 newArray.push(elem);
         });
-        while(newArray.length > 11) {newArray.pop();}
         return newArray
     }
 }

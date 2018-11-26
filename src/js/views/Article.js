@@ -12,27 +12,21 @@ export const renderArticle = (array) => {
                 </picture>
                 <article class="articles-display__wrap__text">
                 <h3 class="articles-display__wrap__text-title">${data.source.name}</h3>
-                <p class="articles-display__wrap__text-description">${data.content}<a href="${data.url}" class="articles-display__wrap-button">Read More</a></p>
-                
+                <p class="articles-display__wrap__text-description">${data.content}</p>
+                <a href="${data.url}" class="articles-display__wrap-button">Read More</a>
             </article>
         </div>`;
     });
 };
 
 //read user input and add to state then execute
-export const userQuery = (defaultQuery)=> {
+export const userQuery = ()=> {
     const input = elements.searchInput.value;
     if(input) {
         state.search = new GetNews({searchQuery: input});
         state.searchHeadlines = new GetNews({searchQuery: input});
         state.search.searchQuery();
-       state.search.searchHeadlines();
-
-    } else {
-        state.search = new GetNews({searchQuery: defaultQuery});
-        state.search.searchQuery();
     }
-    console.log(state)
 };
 
 

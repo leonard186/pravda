@@ -12,6 +12,12 @@ export const categories = ['business', 'entertainment', 'general', 'health', 'sc
 export const sidebar = {
     tickerContainer : document.querySelector('.articles-display__sidebar__container'),
     tickerUl : document.querySelector('.articles-display__sidebar__container__ul'),
+    searchInput: document.getElementById('twitter-search__input'),
+    searchButton: document.getElementById('twitter-search__button')
+};
+
+export const header = {
+    ul: document.querySelector('.header__news-snippet__ul')
 };
 
 export const breakingNews = {

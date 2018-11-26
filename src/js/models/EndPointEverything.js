@@ -1,5 +1,4 @@
 import {renderArticle} from '../views/Article';
-import handleErrors from './ErrorHandler';
 import {renderHeadlines} from "../views/Headline";
 import {newsApiK} from '../models/keys';
 
@@ -16,35 +15,30 @@ export default class GetNews {
         this.complementary = [];
     }
 
-    //search any content in Top-Headlines
-    async searchHeadlines() {
-        const response = await fetch(`${baseURL}top-headlines?q=${encodeURI(this.query.searchQuery)}&apiKey=${key}`);
-        const json = await response.json();
-        let result = json.articles;
-        this.searchInHeadlines = this.filter(result);
-        setTimeout(()=> {
-            this.complementary = this.searchInHeadlines.concat(this.searchInEverything);
-            renderHeadlines(this.complementary);
-        }, 200);
-    }
-
     //search any content in Everything
     async searchQuery() {
-        const response = await fetch(`${baseURL}everything?q=${encodeURI(this.query.searchQuery)}&apiKey=${key}`);
-        const json = await response.json();
-        let result = json.articles;
-        this.searchInEverything = this.filter(result);
-        console.log('this.searchInEverything 1:');
-        console.log(this.searchInEverything);
-        renderArticle(this.searchInEverything);
+            const responseE = await fetch(`${baseURL}everything?q=${encodeURI(this.query.searchQuery)}&apiKey=${key}`);
+            const responseH = await fetch(`${baseURL}top-headlines?q=${encodeURI(this.query.searchQuery)}&apiKey=${key}`);
+            const jsonH = await responseH.json();
+            const jsonE = await responseE.json();
+            this.searchInHeadlines = this.filter(jsonH.articles);
+            this.searchInEverything = this.filter(jsonE.articles);
+            this.complementary = this.searchInHeadlines.concat(this.searchInEverything);
+            renderHeadlines(this.complementary);
+            renderArticle(this.searchInEverything);
     }
 
     //query by country or by category
     async getHeadlinesByCountry() {
-        const response = await fetch(`${baseURL}top-headlines?country=${this.query.country}&category=${this.query.category}&apiKey=${key}`);
-        const json = await response.json();
-        let result = json.articles;
-        renderHeadlines(this.filter(result));
+        const responseH = await fetch(`${baseURL}top-headlines?country=${this.query.country}&category=${this.query.category}&apiKey=${key}`);
+        const responseE = await fetch(`${baseURL}everything?q=${this.query.category}&apiKey=${key}`);
+        const jsonH = await responseH.json();
+        const jsonE = await responseE.json();
+        this.searchInHeadlines = this.filter(jsonH.articles);
+        this.searchInEverything = this.filter(jsonE.articles);
+        this.complementary = this.searchInHeadlines.concat(this.searchInEverything);
+        renderHeadlines(this.complementary);
+        renderArticle(this.searchInEverything);
     }
 
     filter(result) {

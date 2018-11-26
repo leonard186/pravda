@@ -3,38 +3,46 @@ import GetNews from './models/EndPointEverything';
 import {pushTime, getDate} from "./components/Timestamp";
 import * as article from './views/Article';
 import {executeSearch} from "./views/Article";
-import {getToken} from './models/twitter';
-import GetRSS from './models/RSSParse';
+import {getToken} from './models/TwitterAPI';
 import {headlinesPopulateState, assignHeadlineButtons, headlineTicker} from "./views/Headline";
 import {clickAndEnter} from "./components/helperFunctions";
-import {menuSearch} from "./views/Base";
+import {menuSearch, sidebar} from "./views/Base";
 import {userQuery} from "./views/Article";
+import {renderBreakingNews} from "./views/BreakingNews";
+import {renderHeaderNewsSnippet} from "./views/Header";
+//import fetchTweets from './models/TwitterAPI'
+import {RenderTweets, searchTwitter} from "./views/tweets";
 
 
 export const state = {};
 
 
+ async function init() {
 
-userQuery('latest');
+
+
+     userQuery('latest');
 //////////////************* Initiate HEADLINES **************/////////////////
 //initiate state population with categories
-headlinesPopulateState();
+     headlinesPopulateState();
 //render initial content
-state.business.getHeadlinesByCountry();
+     await state.general.getHeadlinesByCountry();
 //assign headline buttons
-assignHeadlineButtons();
+     assignHeadlineButtons();
 //start the ticker effect
-headlineTicker.init();
+      headlineTicker.init();
 //////////////************* END **************/////////////////
 
 
 //////////////************* Initiate Top Menu Search **************/////////////////
-//trigger search and add search query to state
-clickAndEnter(menuSearch.input, menuSearch.button, userQuery);
+//trigger search and add search query to state - news headlines and articles
+    clickAndEnter(menuSearch.input, menuSearch.button, userQuery);
 //////////////************* END **************/////////////////
+     await renderHeaderNewsSnippet();
+     await renderBreakingNews();
+}
 
-
-
+//init();
 
 
 
@@ -96,12 +104,13 @@ elements.searchButton.addEventListener('click', e => {
     elements.articleNode.innerHTML = '';
     controlSearch();
 });*/
+//init twitter
+//getToken();
 
-getToken();
-const reddit = new GetRSS('https://cors-anywhere.herokuapp.com/https://www.reddit.com/r/news/.rss');
-reddit.getResponse();
-const bbc = new GetRSS('https://cors-anywhere.herokuapp.com/http://feeds.bbci.co.uk/news/rss.xml');
-//bbc.getResponse();
+//const test = new fetchTweets('top news');
+//test.getResults();
 
+const loadDefaultTweets = new RenderTweets('top news');
+loadDefaultTweets.render();
 
-
+clickAndEnter(sidebar.searchInput, sidebar.searchButton, searchTwitter);

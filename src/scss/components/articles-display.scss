@@ -4,15 +4,36 @@
   padding: 3.7rem 0;
   display: flex;
 
-
   //articles container
-  &__content {
+  &__container {
     width: 65%;
-
     //section title
     h2 {
       text-transform: uppercase;
       font-weight: 400;
+      margin-bottom: 2.4rem;
+    }
+  }
+
+  &__content {
+    width:100%;
+    max-height: 108.65rem;
+    height: 108.65rem;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 0.5rem;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px grey;
+      border-radius: 10px;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: $bg-secondary-neutral-dark;
     }
 
     &-category {
@@ -31,7 +52,9 @@
   &__wrap {
     display: flex;
     background-color: rgba($text-neutral-light, .2);
-    margin-top: 2.4rem;
+    &:not(:first-child) {
+      margin-top: 2.4rem;
+    }
 
     &__img-container {
       width: 40%;
@@ -77,14 +100,46 @@
   &__sidebar { //outer container
     width: 35%;
     padding-left: 3rem;
+    height: 4rem;
 
     &__heading {  //section title
-      color: $text-primary-light;
       background-color: $color-standout;
-      padding: 0 1.6rem;
       font-weight: 400;
-      width: 100%;
       border-bottom: 1px solid $text-primary-light;
+
+      &__search-button {
+        background-color: $color-standout;
+        border: none;
+        padding: 1.2rem;
+        color: #dddde7;
+        font-size: 1.5rem;
+        z-index:10;
+
+        &:focus{
+          outline: none;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &__search-input{
+        border: none;
+        transition: all .5s ease-in-out;
+        padding: 0 1rem;
+        width: 30rem;
+        height: 3rem;
+        z-index: 0;
+
+        &:focus{
+          outline: none;
+        }
+      }
     }
 
     &__container { //tweet container

@@ -1,5 +1,3 @@
-import {renderBreakingNews} from '../views/BreakingNews';
-
 let Parser = require('rss-parser');//import rss-parser library
 let parser = new Parser();
 
@@ -10,6 +8,11 @@ export default class GetRSS {
 
     async getResponse() {
         let feed = await parser.parseURL(this.rssSource);
-        renderBreakingNews(feed);
+        let dataToDisplay = [];
+        console.log(dataToDisplay);
+        feed.items.forEach(e=> {
+            e.title.length < 80 ? dataToDisplay.push(e) :  null;
+        });
+        return dataToDisplay;
     }
 }
