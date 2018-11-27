@@ -1,6 +1,7 @@
 import {renderArticle} from '../views/Article';
 import {renderHeadlines} from "../views/Headline";
 import {newsApiK} from '../models/keys';
+import {elements, headlines} from "../views/Base";
 
 const baseURL = 'https://newsapi.org/v2/';
 const key = newsApiK[0].concat(newsApiK[1], newsApiK[2], newsApiK[3]);
@@ -24,8 +25,10 @@ export default class GetNews {
             this.searchInHeadlines = this.filter(jsonH.articles);
             this.searchInEverything = this.filter(jsonE.articles);
             this.complementary = this.searchInHeadlines.concat(this.searchInEverything);
-            renderHeadlines(this.complementary);
-            renderArticle(this.searchInEverything);
+            headlines.container.style.opacity = '0';
+            elements.articleNode.style.opacity = '0';
+            await renderHeadlines(this.complementary);
+            await renderArticle(this.searchInEverything);
     }
 
     //query by country or by category
@@ -37,6 +40,8 @@ export default class GetNews {
         this.searchInHeadlines = this.filter(jsonH.articles);
         this.searchInEverything = this.filter(jsonE.articles);
         this.complementary = this.searchInHeadlines.concat(this.searchInEverything);
+        headlines.container.style.opacity = '0';
+        elements.articleNode.style.opacity = '0';
         renderHeadlines(this.complementary);
         renderArticle(this.searchInEverything);
     }
@@ -57,5 +62,5 @@ GetNews.default = {
     country: 'gb',
     category: 'general',
     language: 'en',
-    //sources: 'google-news-uk'
+    //sources: 'bbc'
 };

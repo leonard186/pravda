@@ -1,34 +1,35 @@
 import '../scss/main.scss';
-import GetNews from './models/EndPointEverything';
 import {pushTime, getDate} from "./components/Timestamp";
-import * as article from './views/Article';
-import {executeSearch} from "./views/Article";
-import {getToken} from './models/TwitterAPI';
-import {headlinesPopulateState, assignHeadlineButtons, headlineTicker} from "./views/Headline";
+import {
+    headlinesPopulateState,
+    assignHeadlineButtons,
+    headlineTicker,
+    geoLocationPopulateState, assignGeoLocationButtons
+} from "./views/Headline";
 import {clickAndEnter} from "./components/helperFunctions";
-import {menuSearch, sidebar} from "./views/Base";
+import {allButtons, menuSearch, sidebar} from "./views/Base";
 import {userQuery} from "./views/Article";
 import {renderBreakingNews} from "./views/BreakingNews";
 import {renderHeaderNewsSnippet} from "./views/Header";
-//import fetchTweets from './models/TwitterAPI'
 import {RenderTweets, searchTwitter} from "./views/tweets";
 
 
 export const state = {};
 
-
  async function init() {
-
-
 
      userQuery('latest');
 //////////////************* Initiate HEADLINES **************/////////////////
-//initiate state population with categories
+//initiate state population with categories and geo location search queries
      headlinesPopulateState();
+     geoLocationPopulateState();
 //render initial content
      await state.general.getHeadlinesByCountry();
-//assign headline buttons
+//assign headline and geo location buttons
      assignHeadlineButtons();
+     assignGeoLocationButtons();
+
+     console.log(state);
 //start the ticker effect
       headlineTicker.init();
 //////////////************* END **************/////////////////
@@ -42,9 +43,7 @@ export const state = {};
      await renderBreakingNews();
 }
 
-//init();
-
-
+init();
 
 
 

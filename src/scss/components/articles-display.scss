@@ -20,6 +20,8 @@
     max-height: 108.65rem;
     height: 108.65rem;
     overflow-y: auto;
+    opacity: 1;
+    transition: opacity .25s ease-in;
 
     &::-webkit-scrollbar {
       width: 0.5rem;
@@ -106,6 +108,8 @@
       background-color: $color-standout;
       font-weight: 400;
       border-bottom: 1px solid $text-primary-light;
+      display: flex;
+      align-items: center;
 
       &__search-button {
         background-color: $color-standout;
@@ -114,6 +118,11 @@
         color: #dddde7;
         font-size: 1.5rem;
         z-index:10;
+
+        &-spinner {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
 
         &:focus{
           outline: none;
@@ -153,8 +162,9 @@
       &__ul {
         position: absolute;
         width: 100%;
+        opacity: 1;
         top: 0;
-        //transition: transform 0.5s ease-in;
+        transition: opacity 0.2s ease-in;
       }
 
       &-news {

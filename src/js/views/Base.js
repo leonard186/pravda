@@ -8,6 +8,8 @@ export const elements = {
     headerNews: document.querySelector('.header__news-snippet')
 };
 export const categories = ['business', 'entertainment', 'general', 'health', 'science', 'sports', 'technology'];
+export const geographicLocationQuery = ['world', 'europe', 'north america', 'south america', 'australia', 'asia', 'africa'];
+export const allButtons = [... document.querySelectorAll('.headlines-list__btn-group-button')].concat([... document.querySelectorAll('.articles-list__btn-group-button')]);
 
 export const sidebar = {
     tickerContainer : document.querySelector('.articles-display__sidebar__container'),
@@ -36,4 +38,8 @@ export const headlines = {
 export const menuSearch = {
     input: document.querySelector('.top-menu__search-input'),
     button: document.getElementById('search-button')
-}
+};
+
+export const twitterContainer = {
+    twitter: document.querySelector('.articles-display__sidebar__container__ul'),
+};

@@ -9,7 +9,6 @@ export default class GetRSS {
     async getResponse() {
         let feed = await parser.parseURL(this.rssSource);
         let dataToDisplay = [];
-        console.log(dataToDisplay);
         feed.items.forEach(e=> {
             e.title.length < 80 ? dataToDisplay.push(e) :  null;
         });

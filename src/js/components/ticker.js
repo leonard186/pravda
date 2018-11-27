@@ -1,5 +1,8 @@
-import {sidebar, breakingNews} from '../views/Base';
+import {sidebar, breakingNews, menuSearch, allButtons} from '../views/Base';
 import TinyGesture from 'tinygesture';
+import {applyFunctionToButtons, clickAndEnter} from "./helperFunctions";
+import {userQuery} from "../views/Article";
+import {searchTwitter} from "../views/tweets";
 
 export default class Ticker {
     ///////////******    custom functions:   ******///////////
@@ -18,6 +21,7 @@ export default class Ticker {
         this.scrollDown = this.scrollDown.bind(this);
         this.scrollUp = this.scrollUp.bind(this);
         this.timer = this.timer.bind(this);
+        this.resetTickerPos = this.resetTickerPos.bind(this);
     }
 
     timer() {
@@ -32,7 +36,18 @@ export default class Ticker {
         return setTimer();
     }
 
+    //reset ticker position to 0
+    resetTickerPos() {
+        this.count.position = 0;
+        this.count.index = 0;
+        this.count.timerStore = [];
+        this.scrollState.decrement = false;
+        this.scrollState.increment = true;
+    }
+
     init() {
+        clickAndEnter(menuSearch.input, menuSearch.button, this.resetTickerPos);
+        applyFunctionToButtons(allButtons, this.resetTickerPos);
         this.timer();
         const gesture = new TinyGesture(this.param.parent);
         let scrollUpReset = ()=> {
@@ -60,18 +75,15 @@ export default class Ticker {
     sidebarTicker() {
         let animateInterval;
         let that = this;
-        timerStop();
+        clickAndEnter(sidebar.searchInput, sidebar.searchButton, timerStop);
         const childElements = this.param.childElements;
         this.setContainerSize('height', this.param.parentWrap, childElements, 10);
 
-       function intervalStart(){
-            animateInterval = setInterval(animate, 5000);
-        }
+       function intervalStart(){animateInterval = setInterval(animate, 5000);}
 
         function timerStop() {
-           if(animateInterval) {
-               animateInterval = clearInterval(animateInterval);
-           }
+            sidebar.searchButton.innerHTML = '<img class="articles-display__sidebar__heading__search-button-spinner" src="./img/spinner.gif" alt="spinner">';
+            if(animateInterval) animateInterval = clearInterval(animateInterval);
         }
 
         function reset() {
@@ -83,22 +95,19 @@ export default class Ticker {
         function animate() {
             that.param.parent.style.transition = 'transform .5s ease-out';
             that.param.parent.style.transform += `translate${that.param.axis}(-${childElements[1].offsetHeight}px)`;
-
             setTimeout(reset, 500);
-
         }
 
         intervalStart();
-
     }
 
     ///////////******    reusable functions:   ******///////////
 
     scrollDown() {
         if(this.count.index === 0) {  //change scroll direction
-            this.param.rightButton.disabled = true; //if scroll reaches scroll end disable user input
+            if(this.param.rightButton) this.param.rightButton.disabled = true; //if scroll reaches scroll end disable user input
             this.scrollStateToggle('increment');
-            this.param.rightButton.disabled = false;
+            if(this.param.rightButton) this.param.rightButton.disabled = false;
         } else { //else keep scrolling
             this.scrollStateToggle('decrement');
             this.count.index--;
@@ -111,9 +120,9 @@ export default class Ticker {
 
     scrollUp() {
         if(this.count.index === this.param.childElements.length -1) { //change scroll direction
-            this.param.leftButton.disabled = true;
+            if(this.param.leftButton) this.param.leftButton.disabled = true;
             this.scrollStateToggle('decrement');
-            this.param.leftButton.disabled = false;
+            if(this.param.leftButton) this.param.leftButton.disabled = false;
         } else { //else keep scrolling
             this.scrollStateToggle('increment');
             this.count.index++;

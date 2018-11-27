@@ -6,7 +6,6 @@ export async function renderHeaderNewsSnippet() {
 
     const bbc = new GetRSS('https://cors-anywhere.herokuapp.com/http://feeds.bbci.co.uk/news/rss.xml');
     const result = await bbc.getResponse();
-    console.log(result);
     header.ul.innerHTML = ''; //clear dom element prior to appending fresh content
     result.map((elem)=> { //render filtered titles to the DOM
         header.ul.innerHTML +=

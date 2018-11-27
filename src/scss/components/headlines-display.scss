@@ -34,7 +34,8 @@
       display: flex;
       flex-wrap: wrap;
       flex-direction: column;
-      //transition: transform .35s ease-in;
+      //opacity: 1;
+      transition: opacity .25s ease-in;
     }
   }
 
