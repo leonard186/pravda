@@ -34,7 +34,6 @@
       display: flex;
       flex-wrap: wrap;
       flex-direction: column;
-      //opacity: 1;
       transition: opacity .25s ease-in;
     }
   }
@@ -75,7 +74,16 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: flex-end;
+    justify-content: flex-start;
+
+    a {
+      padding: 0;
+      opacity: 0;
+      transition: opacity .2s ease-in;
+      &:hover{
+        opacity: 1;
+      }
+    }
 
     * {
       text-transform: uppercase;
@@ -91,11 +99,25 @@
     line-height: 1;
     margin-bottom: 2rem;
 
+    &:hover ~ a {
+      opacity: 1;
+    }
+
   }
 
   &__content {
     background: rgba(12, 12, 13, .6);
     line-height: 1.3;
+    &:hover ~ a {
+      opacity: 1;
+    }
+  }
+
+  &__content-full {
+    background: rgba(12, 12, 13, .8);
+    line-height: 1.3;
+    margin-top: 1.5rem;
+    overflow: hidden;
   }
 
   &__image {

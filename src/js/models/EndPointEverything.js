@@ -1,7 +1,9 @@
 import {renderArticle} from '../views/Article';
 import {renderHeadlines} from "../views/Headline";
 import {newsApiK} from '../models/keys';
-import {elements, headlines} from "../views/Base";
+import {article, elements, headlines} from "../views/Base";
+import Parser from '../components/textParser'
+import {setContainerSize} from "../components/helperFunctions";
 
 const baseURL = 'https://newsapi.org/v2/';
 const key = newsApiK[0].concat(newsApiK[1], newsApiK[2], newsApiK[3]);
@@ -20,25 +22,21 @@ export default class GetNews {
     async searchQuery() {
             const responseE = await fetch(`${baseURL}everything?q=${encodeURI(this.query.searchQuery)}&apiKey=${key}`);
             const responseH = await fetch(`${baseURL}top-headlines?q=${encodeURI(this.query.searchQuery)}&apiKey=${key}`);
-            const jsonH = await responseH.json();
-            const jsonE = await responseE.json();
-            this.searchInHeadlines = this.filter(jsonH.articles);
-            this.searchInEverything = this.filter(jsonE.articles);
-            this.complementary = this.searchInHeadlines.concat(this.searchInEverything);
-            headlines.container.style.opacity = '0';
-            elements.articleNode.style.opacity = '0';
-            await renderHeadlines(this.complementary);
-            await renderArticle(this.searchInEverything);
+            await this.getResults(responseH, responseE);
     }
 
     //query by country or by category
-    async getHeadlinesByCountry() {
+    async categories() {
         const responseH = await fetch(`${baseURL}top-headlines?country=${this.query.country}&category=${this.query.category}&apiKey=${key}`);
         const responseE = await fetch(`${baseURL}everything?q=${this.query.category}&apiKey=${key}`);
+        await this.getResults(responseH, responseE);
+    }
+
+    async getResults(responseH, responseE) { //process promise function
         const jsonH = await responseH.json();
         const jsonE = await responseE.json();
-        this.searchInHeadlines = this.filter(jsonH.articles);
-        this.searchInEverything = this.filter(jsonE.articles);
+        this.searchInHeadlines = Parser.parseNews(this.filter(jsonH.articles));
+        this.searchInEverything = Parser.parseNews(this.filter(jsonE.articles));
         this.complementary = this.searchInHeadlines.concat(this.searchInEverything);
         headlines.container.style.opacity = '0';
         elements.articleNode.style.opacity = '0';

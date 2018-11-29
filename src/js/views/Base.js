@@ -5,11 +5,17 @@ export const elements = {
     sectionNode: document.getElementById('sources'),
     dateNode: document.getElementById('header-date'),
     timeNode: document.getElementById('header-time'),
-    headerNews: document.querySelector('.header__news-snippet')
+    headerNews: document.querySelector('.header__news-snippet'),
+    articlesList: document.querySelector('.articles-list')
 };
 export const categories = ['business', 'entertainment', 'general', 'health', 'science', 'sports', 'technology'];
 export const geographicLocationQuery = ['world', 'europe', 'north america', 'south america', 'australia', 'asia', 'africa'];
 export const allButtons = [... document.querySelectorAll('.headlines-list__btn-group-button')].concat([... document.querySelectorAll('.articles-list__btn-group-button')]);
+
+export const article = {
+    parent: document.querySelector('.articles-display__content'),
+    articles: document.querySelectorAll('.articles-display__wrap')
+};
 
 export const sidebar = {
     tickerContainer : document.querySelector('.articles-display__sidebar__container'),
@@ -43,3 +49,7 @@ export const menuSearch = {
 export const twitterContainer = {
     twitter: document.querySelector('.articles-display__sidebar__container__ul'),
 };
+
+export const stickyNav = {
+    nav: document.querySelector('.sticky-nav')
+}

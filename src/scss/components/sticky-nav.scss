@@ -1,0 +1,45 @@
+.sticky-nav {
+  position: fixed;
+  line-height: 1.6;
+  width: 100%;
+  z-index: 999;
+  display: block;
+  transform: translateY(-50px);
+  transition: transform .2s ease-in;
+
+  ul {
+    justify-content: center;
+  }
+
+  &__category__ul{
+
+    &-li {
+
+    }
+  }
+
+  &__geo-location__ul{
+      background-color: $text-primary-light;
+    &-li {
+
+    }
+  }
+
+  &__search {
+    display: flex;
+    width: 15rem;
+
+    &-btn {
+      height: 2.5rem;
+      width: 2.5rem;
+      i {
+        transform: translate(-16px, -8px);
+      }
+    }
+
+    &-input{
+      height: 2.5rem;
+    ;
+    }
+  }
+}

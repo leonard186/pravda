@@ -1,8 +1,6 @@
-import {sidebar, breakingNews, menuSearch, allButtons} from '../views/Base';
+import {sidebar, menuSearch, allButtons} from '../views/Base';
 import TinyGesture from 'tinygesture';
-import {applyFunctionToButtons, clickAndEnter} from "./helperFunctions";
-import {userQuery} from "../views/Article";
-import {searchTwitter} from "../views/tweets";
+import {applyFunctionToButtons, clickAndEnter, setContainerSize} from "./helperFunctions";
 
 export default class Ticker {
     ///////////******    custom functions:   ******///////////
@@ -77,7 +75,7 @@ export default class Ticker {
         let that = this;
         clickAndEnter(sidebar.searchInput, sidebar.searchButton, timerStop);
         const childElements = this.param.childElements;
-        this.setContainerSize('height', this.param.parentWrap, childElements, 10);
+        setContainerSize('height', this.param.parentWrap, childElements, 0, 10);
 
        function intervalStart(){animateInterval = setInterval(animate, 5000);}
 
@@ -173,30 +171,6 @@ export default class Ticker {
             });
         }
     }
-
-
-    //set the height or width of a container relative to the child elements total height
-    setContainerSize(measurement, parentElement, childElementCollection, noOfItemsToDisplay) {
-        //to use setContainerSize:
-        //1. declare measurement type(width or height) as a string
-        //2. parent element and a collection or array of child elements must be passed in as parameters
-
-        //calculate and set container height
-        let measurementTotal = 0;
-        for(let i=0; i < childElementCollection.length; i++) {
-            let el = childElementCollection[i];
-
-
-            if(i < noOfItemsToDisplay) {
-                measurement === 'height' ? measurementTotal += el.offsetHeight : null;
-                measurement === 'width' ? measurementTotal += el.offsetWidth: null;
-            } else {
-                break;
-            }
-        }
-        measurement === 'height' ? parentElement.style.height = `${measurementTotal}px` : null;
-        measurement === 'width' ? parentElement.style.width = `${measurementTotal}px`: null;
-    }
 };
 
 
@@ -209,5 +183,5 @@ Ticker.emptyParam = {
     rightButton: null,
     axis: 'X',
     fadeIn: false,
-    tickerInterval: 5 //unit is measured in seconds and must be round
+    tickerInterval: 10 //unit is measured in seconds and must be round
 };

@@ -16,3 +16,26 @@ export const clickAndEnter = (inputElement, button, callbackFunction)=> {
 export const applyFunctionToButtons = (buttons, callBackFn)=> {
     buttons.forEach(button => button.addEventListener('click', callBackFn, false));
 };
+
+//set the height or width of a container relative to the child elements total height
+export const setContainerSize = (measurement, parentElement, childElementCollection,margin, noOfItemsToDisplay)=> {
+    //to use setContainerSize:
+    //1. declare measurement type(width or height) as a string
+    //2. parent element and a collection or array of child elements must be passed in as parameters
+
+    //calculate and set container height
+    let measurementTotal = 0;
+    for(let i=0; i < childElementCollection.length; i++) {
+        let el = childElementCollection[i];
+
+
+        if(i < noOfItemsToDisplay) {
+            measurement === 'height' ? measurementTotal += el.offsetHeight + margin : null;
+            measurement === 'width' ? measurementTotal += el.offsetWidth: null;
+        } else {
+            break;
+        }
+    }
+    measurement === 'height' ? parentElement.style.height = `${measurementTotal}px` : null;
+    measurement === 'width' ? parentElement.style.width = `${measurementTotal}px`: null;
+};

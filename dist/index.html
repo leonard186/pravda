@@ -9,8 +9,57 @@
         <link rel="stylesheet" type="application/javascript" href="../src/css/style.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
     </head>
-    <body class="container">
+    <body>
 
+    <!--==================================== Hidden Elements  ======================================-->
+
+    <!--========== BEGIN Sticky Navigation ==========-->
+    <nav class="sticky-nav">
+        <ul class="headlines-list__btn-group sticky-nav__category__ul">
+            <li class="headlines-list__btn-group-button sticky-nav__category__ul-li" data-type="business">Business</li>
+            <li class="headlines-list__btn-group-button sticky-nav__category__ul-li" data-type="business">Business</li>
+            <li class="headlines-list__btn-group-button sticky-nav__category__ul-li" data-type="entertainment">Entertainment</li>
+            <li class="headlines-list__btn-group-button sticky-nav__category__ul-li" data-type="general">General</li>
+            <li class="headlines-list__btn-group-button sticky-nav__category__ul-li" data-type="health">Health</li>
+            <li class="headlines-list__btn-group-button sticky-nav__category__ul-li" data-type="science">Science</li>
+            <li class="headlines-list__btn-group-button sticky-nav__category__ul-li" data-type="sports">Sports</li>
+            <li class="headlines-list__btn-group-button sticky-nav__category__ul-li" data-type="technology">Technology</li>
+        </ul>
+
+        <ul class="articles-list__btn-group sticky-nav__geo-location__ul">
+            <li class="articles-list__btn-group-button sticky-nav__geo-location__ul-li" data-type="world">World</li>
+            <li class="articles-list__btn-group-button sticky-nav__geo-location__ul-li" data-type="uk">Europe</li>
+            <li class="articles-list__btn-group-button sticky-nav__geo-location__ul-li" data-type="europe">North America</li>
+            <li class="articles-list__btn-group-button sticky-nav__geo-location__ul-li" data-type="asia">South America</li>
+            <li class="articles-list__btn-group-button sticky-nav__geo-location__ul-li" data-type="uk">Australia</li>
+            <li class="articles-list__btn-group-button sticky-nav__geo-location__ul-li" data-type="europe">Asia</li>
+            <li class="articles-list__btn-group-button sticky-nav__geo-location__ul-li" data-type="europe">Africa</li>
+            <li class="sticky-nav__search">
+                <button class="articles-display__sidebar__heading__search-button sticky-nav__search-btn"
+                        id="search__button"><i
+                        class="fas fa-search"></i></button>
+                <input type="text" class="articles-display__sidebar__heading__search-input sticky-nav__search-input"
+                       id="search__input"
+                       title="search" placeholder="Search">
+
+            </li>
+        </ul>
+
+
+
+    </nav>
+    <!--========== End Top Sticky Navigation ==========-->
+
+
+
+
+
+
+
+
+
+    <!--================================== END Hidden Elements====================================-->
+    <div class="container">
     <!--========== BEGIN Top menu section ==========-->
         <div class="top-menu__underlay"></div>
         <nav class="top-menu top-menu__wrapper top-menu__wrapper-left">
@@ -530,13 +579,6 @@
     <!--========== END Footer section ==========-->
 
 
-
-    <!--
-       <section class="sources" id="sources"></section>
-       <article id="headlines" class="headlines"></article>
-       <input type="text" id="search" title="search">
-       <button type="submit" id="search-button" class="btn-search">Search</button>
-<div id="articles"></div>
-        -->
+        </div>
     <script type="text/javascript" src="./js/bundle.js"></script></body>
 </html>
