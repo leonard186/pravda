@@ -17,7 +17,6 @@
     <nav class="sticky-nav">
         <ul class="headlines-list__btn-group sticky-nav__category__ul">
             <li class="headlines-list__btn-group-button sticky-nav__category__ul-li" data-type="business">Business</li>
-            <li class="headlines-list__btn-group-button sticky-nav__category__ul-li" data-type="business">Business</li>
             <li class="headlines-list__btn-group-button sticky-nav__category__ul-li" data-type="entertainment">Entertainment</li>
             <li class="headlines-list__btn-group-button sticky-nav__category__ul-li" data-type="general">General</li>
             <li class="headlines-list__btn-group-button sticky-nav__category__ul-li" data-type="health">Health</li>
@@ -34,31 +33,63 @@
             <li class="articles-list__btn-group-button sticky-nav__geo-location__ul-li" data-type="uk">Australia</li>
             <li class="articles-list__btn-group-button sticky-nav__geo-location__ul-li" data-type="europe">Asia</li>
             <li class="articles-list__btn-group-button sticky-nav__geo-location__ul-li" data-type="europe">Africa</li>
-            <li class="sticky-nav__search">
-                <button class="articles-display__sidebar__heading__search-button sticky-nav__search-btn"
-                        id="search__button"><i
-                        class="fas fa-search"></i></button>
-                <input type="text" class="articles-display__sidebar__heading__search-input sticky-nav__search-input"
-                       id="search__input"
-                       title="search" placeholder="Search">
-
+            <li>
+                <nav class="sticky-nav__search search-form">
+                    <button class="articles-display__sidebar__heading__search-button sticky-nav__search-btn news-search" id="search__button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <input type="text"
+                           class="articles-display__sidebar__heading__search-input sticky-nav__search-input news-search-input"
+                           id="search__input"
+                           title="search" placeholder="Search">
+                </nav>
             </li>
         </ul>
-
-
-
     </nav>
     <!--========== End Top Sticky Navigation ==========-->
 
 
+    <!--========== Begin Mobile Menu ==========-->
+
+    <nav class="mobile-menu">
+        <nav class="sticky-nav__search mobile-menu-search">
+            <button class="articles-display__sidebar__heading__search-button sticky-nav__search-btn news-search">
+                <i class="fas fa-search"></i>
+            </button>
+            <input type="text"
+                   class="articles-display__sidebar__heading__search-input sticky-nav__search-input news-search-input"
+                   title="search" placeholder="Search">
+        </nav>
+        <ul class="mobile-menu__btn-group__category">
+            <li class="mobile-menu__btn-group__category-button" data-type="business">Business</li>
+            <li class="mobile-menu__btn-group__category-button" data-type="entertainment">Entertainment</li>
+            <li class="mobile-menu__btn-group__category-button" data-type="general">General</li>
+            <li class="mobile-menu__btn-group__category-button" data-type="health">Health</li>
+            <li class="mobile-menu__btn-group__category-button" data-type="science">Science</li>
+            <li class="mobile-menu__btn-group__category-button" data-type="sports">Sports</li>
+            <li class="mobile-menu__btn-group__category-button" data-type="technology">Technology</li>
+        </ul>
+
+        <ul class="mobile-menu__btn-group__geo-loc">
+            <li class="mobile-menu__btn-group__geo-loc-button" data-type="world">World</li>
+            <li class="mobile-menu__btn-group__geo-loc-button" data-type="uk">Europe</li>
+            <li class="mobile-menu__btn-group__geo-loc-button" data-type="europe">North America</li>
+            <li class="mobile-menu__btn-group__geo-loc-button" data-type="asia">South America</li>
+            <li class="mobile-menu__btn-group__geo-loc-button" data-type="uk">Australia</li>
+            <li class="mobile-menu__btn-group__geo-loc-button" data-type="europe">Asia</li>
+            <li class="mobile-menu__btn-group__geo-loc-button" data-type="europe">Africa</li>
+        </ul>
+    </nav>
 
 
 
 
 
 
-
+    <!--========== End Mobile Menu ==========-->
     <!--================================== END Hidden Elements====================================-->
+
+
     <div class="container">
     <!--========== BEGIN Top menu section ==========-->
         <div class="top-menu__underlay"></div>
@@ -81,11 +112,11 @@
                 <a href="mailto:ballok.leonard@yahoo.com?Subject=Hello%20again" target="_top"><i class="far fa-envelope"></i>Send Us an E-mail</a>
             </div>
         </nav>
-        <nav class="top-menu top-menu__wrapper top-menu__search">
-            <button class="top-menu__search-button" id="search-button">
+        <nav class="top-menu top-menu__wrapper top-menu__search search-form">
+            <button class="top-menu__search-button news-search" id="search-button">
                 <i class="fas fa-search"></i>
             </button>
-            <input type="text" class="top-menu__search-input" id="search" title="search"
+            <input type="text" class="top-menu__search-input news-search-input" id="search" title="search"
                placeholder="Search news articles">
         </nav>
     <!--========== END Top menu section ==========-->
@@ -103,6 +134,13 @@
         </a>
 
         <div class="logo-right">
+            <nav class="logo-right__menu-open">
+                <input type="checkbox" id="navi-toggle" class="logo-right__menu-open__checkbox">
+                <label for="navi-toggle" class="logo-right__menu-open__button">
+                    <span class="logo-right__menu-open__icon"></span>
+                </label>
+            </nav>
+
             <div class="logo-right__img-container">
                 <img src="img/banner.jpeg" alt="advert banner placeholder" class="logo-right__banner">
             </div>
@@ -531,25 +569,29 @@
 
 
     <!--========== BEGIN Videos section ==========-->
-    <!--
+
         <div class="videos-underlay"></div>
         <section class="videos">
             <div class="videos__main">
                 <iframe width="900" height="525" src="https://www.youtube-nocookie.com/embed/XOacA3RYrXk"
-                        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
 
-            <h3 class="videos__sources">Other Sources</h3>
-
-            <div class="videos__top">
-                <iframe id="ls_embed_1541523791"
-                        src="https://livestream.com/accounts/21596942/events/6378067/player?width=640&height=360&enableInfoAndActivity=true&autoPlay=true&mute=false" width="300" height="220" frameborder="0" scrolling="no" allowfullscreen> </iframe>
+            <div class="videos__sub">
+                <h3 class="videos__sources">Other Sources</h3>
+                <div class="videos__sub-wrapper">
+                    <div class="videos__top">
+                        <iframe id="ls_embed_1541523791" src="https://livestream.com/accounts/21596942/events/6378067/player?width=640&height=360&enableInfoAndActivity=true
+                            &autoPlay=false&mute=false" width="300" height="220" frameborder="0" scrolling="no"
+                                allowfullscreen> </iframe>
+                    </div>
+                    <div class="videos__bottom">
+                        <iframe frameborder="0" width="300" height="220"
+                                src="https://www.dailymotion.com/embed/video/x2j4h4m" allowfullscreen></iframe>
+                    </div>
+                </div>
             </div>
-            <div class="videos__bottom">
-                <iframe frameborder="0" width="300" height="220"
-                        src="https://www.dailymotion.com/embed/video/x2j4h4m" allowfullscreen allow="autoplay"></iframe>
-            </div>
-        </section> -->
+        </section>
     <!--========== END Videos section ==========-->
 
 

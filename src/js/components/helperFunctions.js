@@ -6,12 +6,19 @@ export const clickAndEnter = (inputElement, button, callbackFunction)=> {
         e.preventDefault();
         e.stopPropagation();
         e.keyCode === 13 ? callbackFunction() : null;
-
+        setTimeout(()=> {//reset input field after submit
+            e.keyCode === 13 ? inputElement.value = '' : null;
+        }, 1000)
     });
-    //button can be any clickable element
-    button.addEventListener('click', callbackFunction); //execute on click
-};
 
+    //button can be any element
+    button.addEventListener('click', ()=> {
+        callbackFunction();//execute callback function
+        setTimeout(()=> {//reset input field after submit
+            inputElement.value = '';
+        }, 1000)
+    });
+};
 
 export const applyFunctionToButtons = (buttons, callBackFn)=> {
     buttons.forEach(button => button.addEventListener('click', callBackFn, false));

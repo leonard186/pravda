@@ -1,9 +1,18 @@
 .headlines-list__underlay {
   background-color: $color-standout;
   grid-area: 3 / 1 / 3 / 12;
+
+  @media only screen and (max-width: 850px) {
+    display: none;
+  }
 }
 
 .headlines-list {
+
+  @media only screen and (max-width: 850px) {
+    display: none;
+  }
+
   &__btn-group {
     display: flex;
     justify-content: flex-start;

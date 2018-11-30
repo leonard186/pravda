@@ -1,11 +1,11 @@
 import {elements} from "../views/Base";
 
-export const pushTime = (domElement) => {
+const pushTime = (domElement) => {
     let date = new Date();
     domElement.innerHTML = date.toLocaleTimeString();
 };
 
-export const getDate = () => {
+const getDate = () => {
     let days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
     let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
@@ -17,14 +17,24 @@ export const getDate = () => {
 
     let returnDate = (day) => {
         switch (day) {
-            case 1: return `${day}'st of`;
-            case 2: return `${day}'nd of`;
-            case 3: return `${day}'rd of`;
-            default: return `${day}'th of`;
+            case 1:
+            case 21:
+            case 31:
+                return `${day}'st of`;
+            case 2:
+            case 22:
+                return `${day}'nd of`;
+            case 3:
+            case 23:
+                return `${day}'rd of`;
+            default:
+                return `${day}'th of`;
         }
     };
     return `${days[weekday]}, ${returnDate(day)} ${months[month]} ${year}`;
 };
 
-let time = setInterval(() => {pushTime(elements.timeNode)}, 1000);
-elements.dateNode.innerHTML = getDate();
+export const renderTimeDate = ()=> {
+    setInterval(() => {pushTime(elements.timeNode)}, 1000);
+    elements.dateNode.innerHTML = getDate();
+};

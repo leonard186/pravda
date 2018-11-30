@@ -1,6 +1,7 @@
 export const elements = {
-    searchInput: document.getElementById('search'),
-    searchButton: document.getElementById('search-button'),
+    searchInput: document.querySelectorAll('.news-search-input'),
+    searchButton: document.querySelectorAll('.news-search'),
+    newsSearchForm: document.querySelectorAll('.search-form'),
     articleNode: document.querySelector('.articles-display__content'),
     sectionNode: document.getElementById('sources'),
     dateNode: document.getElementById('header-date'),
@@ -46,10 +47,19 @@ export const menuSearch = {
     button: document.getElementById('search-button')
 };
 
+export const headlinesButtonGroup = {
+    categoryButtons: document.querySelectorAll('.headlines-list .headlines-list__btn-group > *'),
+    geoLocButtons: document.querySelectorAll('.articles-list .articles-list__btn-group > *')
+};
+
 export const twitterContainer = {
     twitter: document.querySelector('.articles-display__sidebar__container__ul'),
 };
 
 export const stickyNav = {
-    nav: document.querySelector('.sticky-nav')
-}
+    nav: document.querySelector('.sticky-nav'),
+    button: document.getElementById('search__button'),
+    input: document.getElementById('search__input'),
+    categoryButtons: document.querySelectorAll('.sticky-nav__category__ul-li'),
+    geoLocButtons: document.querySelectorAll('.sticky-nav__geo-location__ul-li')
+};

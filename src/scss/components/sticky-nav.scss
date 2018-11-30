@@ -35,11 +35,20 @@
       i {
         transform: translate(-16px, -8px);
       }
+
+      img {
+        width: auto;
+        transform: translate(-16px, -8px);
+      }
     }
 
     &-input{
       height: 2.5rem;
     ;
     }
+  }
+
+  @media only screen and (max-width: 850px) {
+    display: none;
   }
 }

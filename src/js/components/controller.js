@@ -6,13 +6,16 @@ import {RenderTweets} from "../views/tweets";
 
 //read user input and add to state then execute
 export const userQuery = ()=> {
-    const input = elements.searchInput.value;
+    let inputField = elements.searchInput;
+    const input = [].map.call(inputField, (inp)=> inp.value).join('');
     if(input) {
-        elements.searchButton.innerHTML = '<img class="articles-display__sidebar__heading__search-button-spinner" src="./img/spinner.gif" alt="spinner">';
+        elements.searchButton.forEach(elem => elem.innerHTML = '<img class="articles-display__sidebar__heading__search-button-spinner" src="./img/spinner.gif" alt="spinner">');
         state.search = new GetNews({searchQuery: input});
         state.searchHeadlines = new GetNews({searchQuery: input});
         state.search.searchQuery();
     }
+
+
 };
 
 //populate state with categories
@@ -23,10 +26,11 @@ export const headlinesPopulateState = ()=> {
 };
 
 //assign category button to their corresponding category
-export const assignHeadlineButtons = ()=> {
-    let buttons = document.querySelectorAll('.headlines-list__btn-group-button');
-    buttons.forEach((button, index) => {
+export const assignCategoryButtons = (buttonCollection)=> {
+    console.log(buttonCollection);
+    buttonCollection.forEach((button, index) => {
         button.addEventListener('click', ()=>{
+            console.log(state[categories[index]].query.category);
             state[categories[index]].categories();
         })
     })
@@ -40,9 +44,8 @@ export const geoLocationPopulateState = () => {
 };
 
 //assign geo location button to their corresponding category
-export const assignGeoLocationButtons = () => {
-    let buttons = document.querySelectorAll('.articles-list__btn-group-button');
-    buttons.forEach((button, index) => {
+export const assignGeoLocationButtons = (buttonCollection) => {
+    buttonCollection.forEach((button, index) => {
         button.addEventListener('click', ()=> {
             state[geographicLocationQuery[index]].searchQuery();
         })
@@ -57,7 +60,7 @@ export const headlineTicker = new Ticker({
     rightButton: headlines.right,
     axis: 'X',
     fadeIn: true,
-    tickerInterval: 10
+    tickerInterval: 15
 });
 
 //read user input and add to state then execute

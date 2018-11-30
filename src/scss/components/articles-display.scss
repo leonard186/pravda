@@ -4,9 +4,23 @@
   padding: 3.7rem 0;
   display: flex;
 
+  @media only screen and (min-width: 999px) and (max-width: 1300px) {
+   font-size: 80%;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    display: block;
+  }
+
   //articles container
   &__container {
     width: 65%;
+
+    @media only screen and (max-width: 1000px) {
+      width: 100%;
+    }
+
+
     //section title
     h2 {
       text-transform: uppercase;
@@ -86,6 +100,9 @@
     }
 
     &__text {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       width: 60%;
       padding: .8rem 3rem;
       transition: all .3s ease-in;
@@ -93,6 +110,7 @@
 
       &-title {
         display: table;
+        width: max-content;
         font-family: $font-spaced;
         text-transform: uppercase;
         @include headerUnderline($text-primary-dark);
@@ -102,24 +120,36 @@
         line-height: 2.2;
         font-weight: 700;
         color: $text-article-content;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.065);
+
+        /*@media only screen and (max-width: 1000px) {
+          line-height: 1.9;
+          padding-top: 1rem;
+          font-weight: 500;
+        }*/
       }
     }
 
     @include btnUnderline(.5rem);
     &-button {
+      display: table;
+      width: max-content;
       font-size: 1.2rem;
       font-weight: 700;
-      color: $text-neutral-dark
+      color: $text-neutral-dark;
     }
   }
 
 
   //sidebar / twitter feed
   &__sidebar { //outer container
-    width: 35%;
+    width: 41.8rem;
     padding-left: 3rem;
-    height: 4rem;
+
+    @media only screen and (max-width: 1000px) {
+      width: 100%;
+      padding-left: 0;
+      margin-top: 3rem;
+    }
 
     &__heading {  //section title
       background-color: $color-standout;
@@ -158,7 +188,8 @@
         border: none;
         transition: all .5s ease-in-out;
         padding: 0 1rem;
-        width: 30rem;
+        margin-right: 1rem;
+        width: 100%;
         height: 3rem;
         z-index: 0;
 
@@ -187,7 +218,6 @@
       &-news {
         display: grid;
         grid-template-columns: min-content minmax(min-content, 1fr);
-        //grid-template-rows: 3.5rem 7.5rem;
         align-items: center;
         background-color: $bg-primary-neutral;
         color: $text-primary-light;
@@ -224,6 +254,10 @@
           padding: 1rem 1rem 1rem 0;
           font-size: 1.4rem;
           color: $text-neutral-light;
+
+          @media only screen and (max-width: 1000px) {
+            font-size: 98%;
+          }
         }
       }
     }

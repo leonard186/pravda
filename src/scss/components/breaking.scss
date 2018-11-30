@@ -6,13 +6,29 @@
   font-size: 1.6rem;
   height: 4rem;
 
+  @media only screen and (max-width: 900px) {
+    font-size: 1.2rem;
+  }
+
+  @media only screen and (max-width: 600px) {
+    font-size: 1rem;
+  }
+
+  @media only screen and (max-width: 500px) {
+    display: none;
+  }
+
   &__title {
     background-color: $color-standout;
     color: $text-primary-light;
     padding: 0 1.6rem;
     font-weight: 400;
-    font-size: 1.6rem;
+    font-size: inherit;
     text-transform: uppercase;
+
+    @media only screen and (max-width: 700px) {
+      display: none;
+    }
   }
 
   &__news {
@@ -36,13 +52,13 @@
       }
 
       &-title {
-        font-size: 1.6rem;
+        font-size: inherit;
         font-weight: 400;
         text-transform: uppercase;
       }
 
       &-content {
-        font-size: 1.6rem;
+        font-size: inherit;
         font-weight: 400;
         color: $text-neutral-light
       }

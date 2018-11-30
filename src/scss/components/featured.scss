@@ -96,10 +96,18 @@
       margin: 2rem 2rem 0 0;
       font-weight: 700;
       font-size: 1.6rem;
+
+      @media only screen and (max-width: 850px) {
+        font-size: 1.4rem;
+      }
     }
   }
 
   &-img {
     margin: auto;
+
+    @media only screen and (max-width: 1000px) {
+      display: none;
+    }
   }
 }

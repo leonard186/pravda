@@ -23,7 +23,7 @@ export async function renderHeaderNewsSnippet() {
         parent: header.ul,
         axis: 'Y',
         fadeIn: true,
-        tickerInterval: 5
+        tickerInterval: 8
     });
 
     //start the ticker

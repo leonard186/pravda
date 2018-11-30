@@ -9,6 +9,7 @@
   color: $text-primary-light;
   text-align: center;
   margin-top: 5%;
+  line-height: 1.2;
 
 
   &__sub {
@@ -22,6 +23,10 @@
     display: block;
     margin-top: 3rem;
 
+    @media only screen and (max-width: 850px) {
+    font-size: 3rem;
+  }
+
     &-standout {
       color: $color-standout;
     }
@@ -32,7 +37,7 @@
     overflow: hidden;
     width: 100%;
     z-index: 1;
-    margin-top: 6rem;
+    margin-top: 4rem;
     height: 7.5rem;
 
     &__ul {

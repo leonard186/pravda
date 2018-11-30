@@ -15,9 +15,17 @@ grid-area: 11 / 1 / 11 / 11;
     flex-wrap: wrap;
     justify-content: center;
 
+  @media only screen and (max-width: 850px) {
+    flex-direction: column-reverse;
+  }
+
     &__about {
       color: $text-footer-light;
       width: 30%;
+
+      @media only screen and (max-width: 850px) {
+        width: auto;
+      }
 
 
       &-title{
@@ -40,6 +48,11 @@ grid-area: 11 / 1 / 11 / 11;
     width: 30%;
     display: flex;
     align-items: center;
+
+    @media only screen and (max-width: 850px) {
+      width: auto;
+      margin: auto;
+    }
 
     &__text-container{
       font-size: 2.5rem;

@@ -2,7 +2,6 @@ import {article, elements, headlines} from './Base';
 import {setContainerSize} from "../components/helperFunctions";
 
 export const renderArticle = (array) => {
-    console.log(array);
     setTimeout(()=> {//delay rendering content until fade out effect finishes
         article.parent.innerHTML = '';
         if(array.length !== 0) {
@@ -15,12 +14,14 @@ export const renderArticle = (array) => {
                         <article class="articles-display__wrap__text">
                             <h3 class="articles-display__wrap__text-title">${data.source.name}</h3>
                             <p class="articles-display__wrap__text-description">${data.content}</p>
-                            <a href="${data.url}" class="articles-display__wrap-button">Read More</a>
+                            <div class="div">
+                                <hr>
+                                <a href="${data.url}" class="articles-display__wrap-button">Read More</a>
+                            </div>
                         </article>
                     </div>`;
             });
         } else {
-            console.log(article.articles);
             article.parent.innerHTML =
                 `<div class="articles-display__wrap">
                     <picture class="articles-display__wrap__img-container" style="width: 60%">
@@ -35,7 +36,7 @@ export const renderArticle = (array) => {
 
 
         article.parent.style.opacity = '1';
-        elements.searchButton.innerHTML = '<i class="fas fa-search"></i>'; //render search button
+        elements.searchButton.forEach(elem => elem.innerHTML = '<i class="fas fa-search"></i>'); //render search button
     }, 250);
 };
 

@@ -12,6 +12,13 @@
   a {
     padding: 0 1.25rem;
     border-left: 1px solid #4c4c59;
+
+    @media only screen and (max-width: 850px) {
+
+      &:last-child {
+        border-right: 1px solid #4c4c59;
+      }
+    }
   }
 
   a:hover,
@@ -40,6 +47,11 @@
 
   &__phone,
   &__email {
+
+    @media only screen and (max-width: 850px) {
+      display: none;
+    }
+
     display:flex;
     i {
       padding-right: 0.5rem;
