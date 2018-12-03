@@ -25,6 +25,7 @@ export default class Ticker {
     timer() {
         const setTimer = () => {
             let startInterval = setTimeout(setTimer, 1000);
+
             this.count.timerStore.push(startInterval);
              if(this.count.timerStore.length === this.param.tickerInterval) {
                 this.scrollState.increment === true ? this.scrollUp(true) : this.scrollDown(true);

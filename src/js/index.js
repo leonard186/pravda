@@ -1,4 +1,5 @@
 import '../scss/main.scss';
+import {renderHeadlinesBase} from "./views/Headline";
 import {renderTimeDate} from "./components/Timestamp";
 import {
     headlinesPopulateState,
@@ -10,18 +11,19 @@ import {
     searchTwitter, navigationToggle
 } from "./components/controller";
 import {clickAndEnter} from "./components/helperFunctions";
-import {headlinesButtonGroup, menuSearch, sidebar, stickyNav} from "./views/Base";
+import {headlines, headlinesButtonGroup, menuSearch, sidebar, stickyNav} from "./views/Base";
 import {renderBreakingNews} from "./views/BreakingNews";
 import {renderHeaderNewsSnippet} from "./views/Header";
 import {RenderTweets} from "./views/tweets";
+import Ticker from "./components/ticker";
 
 
 export const state = {};
 
+
  async function init() {
      renderTimeDate();
      const loadDefaultTweets = new RenderTweets('top news'); //initiate default tweet query
-
      userQuery('latest');
 //////////////************* Initiate HEADLINES **************/////////////////
 //initiate state population with categories and geo location search queries
@@ -36,8 +38,16 @@ export const state = {};
      assignCategoryButtons(stickyNav.categoryButtons);
      assignGeoLocationButtons(stickyNav.geoLocButtons);
 
-     console.log(state);
 //start the ticker effect
+     const headlineTicker = new Ticker({
+         childElements: document.querySelectorAll('.headlines-display__container'),
+         parent: headlines.container,
+         leftButton: headlines.left,
+         rightButton: headlines.right,
+         axis: 'X',
+         fadeIn: true,
+         tickerInterval: 15
+     });
       headlineTicker.init();
 //////////////************* END **************/////////////////
 

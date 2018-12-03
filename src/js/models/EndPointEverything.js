@@ -1,5 +1,5 @@
 import {renderArticle} from '../views/Article';
-import {renderHeadlines} from "../views/Headline";
+import {renderHeadlines, renderHeadlinesMobile} from "../views/Headline";
 import {newsApiK} from '../models/keys';
 import {article, elements, headlines} from "../views/Base";
 import Parser from '../components/textParser'
@@ -33,6 +33,7 @@ export default class GetNews {
     }
 
     async getResults(responseH, responseE) { //process promise function
+        const tabletView = window.matchMedia("(max-width: 850px)");
         const jsonH = await responseH.json();
         const jsonE = await responseE.json();
         this.searchInHeadlines = Parser.parseNews(this.filter(jsonH.articles));
@@ -40,8 +41,10 @@ export default class GetNews {
         this.complementary = this.searchInHeadlines.concat(this.searchInEverything);
         headlines.container.style.opacity = '0';
         elements.articleNode.style.opacity = '0';
-        renderHeadlines(this.complementary);
-        renderArticle(this.searchInEverything);
+        await tabletView.matches ? renderHeadlinesMobile(this.complementary) : renderHeadlines(this.complementary);
+
+        //await renderHeadlines(this.complementary);
+        await renderArticle(this.searchInEverything);
     }
 
     filter(result) {

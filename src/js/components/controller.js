@@ -51,7 +51,7 @@ export const assignGeoLocationButtons = (buttonCollection) => {
         })
     })
 };
-
+/*
 //create Ticker instance with parameters for headline section
 export const headlineTicker = new Ticker({
     childElements: document.querySelectorAll('.headlines-display__container'),
@@ -62,7 +62,7 @@ export const headlineTicker = new Ticker({
     fadeIn: true,
     tickerInterval: 15
 });
-
+*/
 //read user input and add to state then execute
 export const searchTwitter = ()=> {
     const input = sidebar.searchInput.value;
