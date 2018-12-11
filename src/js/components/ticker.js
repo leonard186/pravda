@@ -37,9 +37,11 @@ export default class Ticker {
 
     //reset ticker position to 0
     resetTickerPos() {
+        console.log('reset');
         this.count.position = 0;
         this.count.index = 0;
         this.count.timerStore = [];
+        console.log(this.count.timerStore);
         this.scrollState.decrement = false;
         this.scrollState.increment = true;
     }
@@ -143,7 +145,7 @@ export default class Ticker {
     }
 
     //read current element dimensions and change position
-    setDirection(arg) { //takes two parameters: 'increment' or 'decrement'
+    async setDirection(arg) { //takes two parameters: 'increment' or 'decrement'
         if(arg === 'increment') {
             if(this.param.axis === 'Y') {
                 this.count.position += this.param.childElements[this.count.index].offsetHeight
@@ -157,7 +159,6 @@ export default class Ticker {
                 this.count.position -= this.param.childElements[this.count.index].offsetWidth;
             }
         }
-
     }
 
     //call this function if fade in effect is required

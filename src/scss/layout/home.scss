@@ -4,8 +4,8 @@
   grid-template-columns: minmax(2rem, 1fr) repeat(8, [col-start] minmax(min-content, 16rem) [col-end]) minmax(2rem, 1fr);
 
   @media only screen and (max-width: 850px) {
-    grid-template-rows: [top-menu] auto [logo] auto [categories] auto [countries] auto [header] 40rem [breaking] auto [headlines-display] 60rem [articles] minmax(60rem, auto) [featured] 25rem [videos] minmax(60rem, auto) [footer] minmax(30rem, auto) [footer-end];
-    grid-template-columns: minmax(0.5rem, 1fr) repeat(8, [col-start] minmax(min-content, 16rem) [col-end]) minmax(0.5rem, 1fr);
+    grid-template-rows: [top-menu] auto [logo] auto [categories] auto [countries] auto [header] 40rem [breaking] auto [headlines-display] 50rem [articles] minmax(60rem, auto) [featured] 25rem [videos] minmax(60rem, auto) [footer] minmax(30rem, auto) [footer-end];
+    grid-template-columns: 1fr repeat(8, [col-start] minmax(min-content, 16rem) [col-end]) 1fr;
 
   }
 }

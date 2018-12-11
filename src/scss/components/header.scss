@@ -11,6 +11,12 @@
   margin-top: 5%;
   line-height: 1.2;
 
+  @media only screen and (max-width: 850px) {
+    margin-top: 10%;
+    padding: 0 1rem 0 1rem;
+    font-size: 1rem;
+  }
+
 
   &__sub {
     display: block;
@@ -48,6 +54,10 @@
         opacity: 0;
         transition: opacity 1s ease-in;
 
+        @media only screen and (max-width: 850px) {
+          height: 7.5rem;
+        }
+
         &-title {
           margin: 0 0 1rem 0;
           text-transform: uppercase;
@@ -55,8 +65,12 @@
 
         &-info {
           letter-spacing: 0.2rem;
-          line-height: 2.5rem;
+          line-height: 2rem;
           font-weight: 700;
+
+          @media only screen and (max-width: 850px) {
+            display: none;
+          }
         }
       }
     }

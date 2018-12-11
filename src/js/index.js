@@ -8,7 +8,7 @@ import {
     geoLocationPopulateState,
     assignGeoLocationButtons,
     userQuery,
-    searchTwitter, navigationToggle
+    searchTwitter, navigationToggle, mobileNavToggle
 } from "./components/controller";
 import {clickAndEnter} from "./components/helperFunctions";
 import {headlines, headlinesButtonGroup, menuSearch, sidebar, stickyNav} from "./views/Base";
@@ -64,6 +64,7 @@ export const state = {};
      await loadDefaultTweets.render();
 }
 
-init();
+//init();
 
 navigationToggle();
+mobileNavToggle();

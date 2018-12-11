@@ -1,4 +1,6 @@
 //executes callback function on click or Enter key press
+import {headlines} from "../views/Base";
+
 export const clickAndEnter = (inputElement, button, callbackFunction)=> {
 
     //inputElement should be the text input element
@@ -45,4 +47,15 @@ export const setContainerSize = (measurement, parentElement, childElementCollect
     }
     measurement === 'height' ? parentElement.style.height = `${measurementTotal}px` : null;
     measurement === 'width' ? parentElement.style.width = `${measurementTotal}px`: null;
+};
+
+export const renderBaseLayout = ()=> {
+    headlines.container.innerHTML = '';
+
+    for(let i = 0; i< 13; i++) {
+        console.log('rendering')
+        headlines.container.innerHTML += `<div class="headlines-display__container">
+                                            <article class="headlines-display__primary"></article>
+                                        </div>`;
+    }
 };

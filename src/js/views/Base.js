@@ -63,3 +63,14 @@ export const stickyNav = {
     categoryButtons: document.querySelectorAll('.sticky-nav__category__ul-li'),
     geoLocButtons: document.querySelectorAll('.sticky-nav__geo-location__ul-li')
 };
+
+export const mobileNav = {
+    navButton: document.querySelector('.mobile-navigation__button'),
+    navBackground: document.querySelector('.mobile-navigation__background'),
+    navMenu: document.querySelector('.mobile-navigation__menu'),
+    nav: document.querySelector('.mobile-navigation'),
+    searchButton: document.querySelector('.mobile-navigation__search-btn'),
+    input: document.querySelector('.mobile-navigation__search-input'),
+    categoryButtons: document.querySelectorAll('.mobile-menu__btn-group__category-button'),
+    geoLocButtons: document.querySelectorAll('.mobile-menu__btn-group__geo-loc-button')
+};

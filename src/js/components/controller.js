@@ -1,7 +1,6 @@
 import GetNews from '../models/EndPointEverything';
-import {categories, elements, geographicLocationQuery, headlines, sidebar, stickyNav} from "../views/Base";
+import {categories, elements, geographicLocationQuery, mobileNav, sidebar, stickyNav} from "../views/Base";
 import {state} from "../index";
-import Ticker from "./ticker";
 import {RenderTweets} from "../views/tweets";
 
 //read user input and add to state then execute
@@ -51,18 +50,7 @@ export const assignGeoLocationButtons = (buttonCollection) => {
         })
     })
 };
-/*
-//create Ticker instance with parameters for headline section
-export const headlineTicker = new Ticker({
-    childElements: document.querySelectorAll('.headlines-display__container'),
-    parent: headlines.container,
-    leftButton: headlines.left,
-    rightButton: headlines.right,
-    axis: 'X',
-    fadeIn: true,
-    tickerInterval: 15
-});
-*/
+
 //read user input and add to state then execute
 export const searchTwitter = ()=> {
     const input = sidebar.searchInput.value;
@@ -73,7 +61,6 @@ export const searchTwitter = ()=> {
 };
 
 //nav-bar show-hide
-//show/hide navigation arrows and bookmark
 export const navigationToggle = ()=> {
     let prevScrollPos = window.pageYOffset;
     let trigger = elements.articlesList.offsetTop + 50;
@@ -86,5 +73,32 @@ export const navigationToggle = ()=> {
             }
             prevScrollPos = currentScrollPos;
         }
+};
 
+//mobile nav-bar show-hide
+export const mobileNavToggle = ()=> {
+    let mobileNavElements = [mobileNav.nav, mobileNav.navBackground, mobileNav.navMenu, mobileNav.navButton];
+    let header = document.querySelector('.header');
+    let prevScrollPos = window.pageYOffset;
+    let trigger = header.offsetTop + 50;
+
+    window.onscroll = function() {
+        let currentScrollPos = window.pageYOffset;
+
+        //scroll up
+        if (prevScrollPos > currentScrollPos && window.pageYOffset > trigger) {
+            mobileNavElements.map(el => {el.setAttribute('style', 'top: .5rem; right: .5rem;')});
+
+        //reset to initial top position
+        } else if(window.pageYOffset < 36) {
+            mobileNavElements.map(el => {el.setAttribute('style', 'top: 6rem; right: .5rem;')});
+        }
+
+        //scroll down
+        else if(prevScrollPos < currentScrollPos && window.pageYOffset > 36) {
+            mobileNavElements.map(el => {el.setAttribute('style', 'top: -6rem; right: .5rem;')});
+        }
+
+        prevScrollPos = currentScrollPos;
+    }
 };

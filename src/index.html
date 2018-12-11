@@ -51,40 +51,58 @@
 
     <!--========== Begin Mobile Menu ==========-->
 
-    <nav class="mobile-menu">
-        <nav class="sticky-nav__search mobile-menu-search">
-            <button class="articles-display__sidebar__heading__search-button sticky-nav__search-btn news-search">
-                <i class="fas fa-search"></i>
-            </button>
-            <input type="text"
-                   class="articles-display__sidebar__heading__search-input sticky-nav__search-input news-search-input"
-                   title="search" placeholder="Search">
+    <div class="mobile-navigation">
+        <!-- Navigation Button -->
+        <input type="checkbox" id="navi-toggle" class="mobile-navigation__checkbox">
+        <label for="navi-toggle" class="mobile-navigation__button">
+            <span class="mobile-navigation__icon"></span>
+        </label>
+
+        <!-- Navigation Body -->
+        <div class="mobile-navigation__background">&nbsp;</div>
+
+        <!-- Navigation Items -->
+        <nav class="mobile-navigation__menu">
+
+            <!-- Navigation search bar -->
+            <nav class="sticky-nav__search mobile-navigation__menu__search">
+
+                <button class="articles-display__sidebar__heading__search-button mobile-navigation__menu__search-btn news-search">
+                    <i class="fas fa-search"></i>
+                </button>
+
+                <input type="text"
+                       class="articles-display__sidebar__heading__search-input mobile-navigation__menu__search-input news-search-input"
+                       title="search" placeholder="Search">
+
+            </nav>
+
+            <!-- Navigation list -->
+            <div class="mobile-navigation__menu__items">
+                <h3 class="mobile-navigation__menu__items-title">Categories</h3>
+                <ul class="mobile-navigation__menu__items__category">
+                    <li class="mobile-navigation__menu__items__category-button" data-type="business">Business</li>
+                    <li class="mobile-navigation__menu__items__category-button" data-type="entertainment">Entertainment</li>
+                    <li class="mobile-navigation__menu__items__category-button" data-type="general">General</li>
+                    <li class="mobile-navigation__menu__items__category-button" data-type="health">Health</li>
+                    <li class="mobile-navigation__menu__items__category-button" data-type="science">Science</li>
+                    <li class="mobile-navigation__menu__items__category-button" data-type="sports">Sports</li>
+                    <li class="mobile-navigation__menu__items__category-button" data-type="technology">Technology</li>
+                </ul>
+                <h3 class="mobile-navigation__menu__items-title">Location</h3>
+                <ul class="mobile-navigation__menu__items__geo-loc">
+                    <li class="mobile-navigation__menu__items__geo-loc-button" data-type="world">World</li>
+                    <li class="mobile-navigation__menu__items__geo-loc-button" data-type="uk">Europe</li>
+                    <li class="mobile-navigation__menu__items__geo-loc-button" data-type="europe">North America</li>
+                    <li class="mobile-navigation__menu__items__geo-loc-button" data-type="asia">South America</li>
+                    <li class="mobile-navigation__menu__items__geo-loc-button" data-type="uk">Australia</li>
+                    <li class="mobile-navigation__menu__items__geo-loc-button" data-type="europe">Asia</li>
+                    <li class="mobile-navigation__menu__items__geo-loc-button" data-type="europe">Africa</li>
+                </ul>
+            </div>
+
         </nav>
-        <ul class="mobile-menu__btn-group__category">
-            <li class="mobile-menu__btn-group__category-button" data-type="business">Business</li>
-            <li class="mobile-menu__btn-group__category-button" data-type="entertainment">Entertainment</li>
-            <li class="mobile-menu__btn-group__category-button" data-type="general">General</li>
-            <li class="mobile-menu__btn-group__category-button" data-type="health">Health</li>
-            <li class="mobile-menu__btn-group__category-button" data-type="science">Science</li>
-            <li class="mobile-menu__btn-group__category-button" data-type="sports">Sports</li>
-            <li class="mobile-menu__btn-group__category-button" data-type="technology">Technology</li>
-        </ul>
-
-        <ul class="mobile-menu__btn-group__geo-loc">
-            <li class="mobile-menu__btn-group__geo-loc-button" data-type="world">World</li>
-            <li class="mobile-menu__btn-group__geo-loc-button" data-type="uk">Europe</li>
-            <li class="mobile-menu__btn-group__geo-loc-button" data-type="europe">North America</li>
-            <li class="mobile-menu__btn-group__geo-loc-button" data-type="asia">South America</li>
-            <li class="mobile-menu__btn-group__geo-loc-button" data-type="uk">Australia</li>
-            <li class="mobile-menu__btn-group__geo-loc-button" data-type="europe">Asia</li>
-            <li class="mobile-menu__btn-group__geo-loc-button" data-type="europe">Africa</li>
-        </ul>
-    </nav>
-
-
-
-
-
+    </div>
 
     <!--========== End Mobile Menu ==========-->
     <!--================================== END Hidden Elements====================================-->
@@ -134,13 +152,6 @@
         </a>
 
         <div class="logo-right">
-            <nav class="logo-right__menu-open">
-                <input type="checkbox" id="navi-toggle" class="logo-right__menu-open__checkbox">
-                <label for="navi-toggle" class="logo-right__menu-open__button">
-                    <span class="logo-right__menu-open__icon"></span>
-                </label>
-            </nav>
-
             <div class="logo-right__img-container">
                 <img src="./img/banner.jpeg" alt="advert banner placeholder" class="logo-right__banner">
             </div>
@@ -428,8 +439,8 @@
            <div class="articles-display__container">
 
                <h2>
-                   <span class="articles-display__content-category">Quick Read</span>
-                   <span class="articles-display__content-text"><i class="fas fa-angle-right"></i> Articles of interest</span>
+                   <span class="articles-display__content-category">Quick Read <i class="fas fa-angle-right"></i> </span>
+                   <span class="articles-display__content-text">Articles of interest</span>
                </h2>
 
                <div class="articles-display__content">
