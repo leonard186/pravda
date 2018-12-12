@@ -1,8 +1,13 @@
 .mobile-navigation {
+  display: none;
   position: fixed;
   top: 6rem;
   right: .5rem;
   z-index: 3000;
+
+  @media only screen and (max-width: 850px) {
+    display: block;
+  }
 
    &__checkbox {
      display: none;
@@ -58,7 +63,7 @@
 
      &__items {
        color: rgba($text-primary-light, .6);
-       height: calc(100% - 35px);
+       height: calc(100% - 75px);
        overflow: scroll;
 
        &-title {

@@ -1,7 +1,6 @@
-import {sidebar, menuSearch, allButtons, stickyNav, mobileNav} from '../views/Base';
+import {sidebar, menuSearch, stickyNav, mobileNav} from '../views/Base';
 import TinyGesture from 'tinygesture';
-import {applyFunctionToButtons, clickAndEnter, setContainerSize} from "./helperFunctions";
-import {userQuery} from "./controller";
+import {clickAndEnter, setContainerSize} from "./helperFunctions";
 
 export default class Ticker {
 
@@ -18,17 +17,6 @@ export default class Ticker {
         };
         this.scrollDown = this.scrollDown.bind(this);
         this.scrollUp = this.scrollUp.bind(this);
-        this.resetTickerPos = this.resetTickerPos.bind(this);
-    }
-
-
-    //reset ticker position to 0
-    resetTickerPos() {
-        console.log('reset');
-        this.count.position = 0;
-        this.count.index = 0;
-        this.scrollState.decrement = false;
-        this.scrollState.increment = true;
     }
 
     init() {
@@ -50,8 +38,6 @@ export default class Ticker {
         //start timer
         timerStart();
 
-        clickAndEnter(menuSearch.input, menuSearch.button, this.resetTickerPos);
-        applyFunctionToButtons(allButtons, this.resetTickerPos);
         const gesture = new TinyGesture(this.param.parent);
 
         //control buttons

@@ -8,7 +8,7 @@ import {
     userQuery,
     searchTwitter, navigationToggle, mobileNavToggle
 } from "./components/controller";
-import {clickAndEnter} from "./components/helperFunctions";
+import {clickAndEnter, smoothScroll} from "./components/helperFunctions";
 import {headlines, headlinesButtonGroup, menuSearch, sidebar, stickyNav, mobileNav} from "./views/Base";
 import {renderBreakingNews} from "./views/BreakingNews";
 import {renderHeaderNewsSnippet} from "./views/Header";
@@ -67,5 +67,5 @@ export const state = {};
 
 init();
 
-navigationToggle();
 mobileNavToggle();
+

@@ -1,9 +1,8 @@
 import {renderArticle} from '../views/Article';
 import {renderHeadlines, renderHeadlinesMobile} from "../views/Headline";
 import {newsApiK} from '../models/keys';
-import {article, elements, headlines} from "../views/Base";
+import {elements, headlines} from "../views/Base";
 import Parser from '../components/textParser'
-import {setContainerSize} from "../components/helperFunctions";
 
 const baseURL = 'https://newsapi.org/v2/';
 const key = newsApiK[0].concat(newsApiK[1], newsApiK[2], newsApiK[3]);
@@ -20,9 +19,9 @@ export default class GetNews {
 
     //search any content in Everything
     async searchQuery() {
-            const responseE = await fetch(`${baseURL}everything?q=${encodeURI(this.query.searchQuery)}&apiKey=${key}`);
-            const responseH = await fetch(`${baseURL}top-headlines?q=${encodeURI(this.query.searchQuery)}&apiKey=${key}`);
-            await this.getResults(responseH, responseE);
+        const responseE = await fetch(`${baseURL}everything?q=${encodeURI(this.query.searchQuery)}&apiKey=${key}`);
+        const responseH = await fetch(`${baseURL}top-headlines?q=${encodeURI(this.query.searchQuery)}&apiKey=${key}`);
+        await this.getResults(responseH, responseE);
     }
 
     //query by country or by category
@@ -39,8 +38,8 @@ export default class GetNews {
         this.searchInHeadlines = Parser.parseNews(this.filter(jsonH.articles));
         this.searchInEverything = Parser.parseNews(this.filter(jsonE.articles));
         this.complementary = this.searchInHeadlines.concat(this.searchInEverything);
-        headlines.container.style.opacity = '0';
-        elements.articleNode.style.opacity = '0';
+        //headlines.container.style.opacity = '0';
+        //elements.articleNode.style.opacity = '0';
         await tabletView.matches ? renderHeadlinesMobile(this.complementary) : renderHeadlines(this.complementary);
         await renderArticle(this.searchInEverything);
     }
@@ -61,5 +60,4 @@ GetNews.default = {
     country: 'gb',
     category: 'general',
     language: 'en',
-    //sources: 'bbc'
 };

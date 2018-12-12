@@ -1,0 +1,29 @@
+.scroll-top {
+    text-decoration: none;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    overflow: hidden;
+    width: 41px;
+    height: 41px;
+    border: none;
+    background: url(../img/top.png) no-repeat left top;
+    z-index: 1000;
+    transform: translateY(100px);
+    transition: transform .2s;
+
+  &:hover > &__hover {
+    opacity: 1;
+  }
+
+  &__hover {
+    background: url(../img/top.png) no-repeat left -40px;
+    width: 40px;
+    height: 40px;
+    display: block;
+    overflow: hidden;
+    float: left;
+    opacity: 0;
+    transition: opacity .2s;
+  }
+}

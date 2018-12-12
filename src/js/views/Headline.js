@@ -31,7 +31,7 @@ import Ticker from "../components/ticker";
             </div>`
      }
 
-     headlines.container.style.opacity = '1';
+     //headlines.container.style.opacity = '1';
 
      const headlineTicker = new Ticker({
          childElements: document.querySelectorAll('.headlines-display__container'),
@@ -39,7 +39,7 @@ import Ticker from "../components/ticker";
          leftButton: headlines.left,
          rightButton: headlines.right,
          axis: 'X',
-         fadeIn: true,
+         fadeIn: false,
          interval: 15000
      });
      headlineTicker.init();
@@ -63,7 +63,7 @@ export const renderHeadlines = (array) => {
                 <h3 class="headlines-display__title">Sorry, no such query exists in our database, please try another word</h3>`
         }
 
-        headlines.container.style.opacity = '1';
+        //headlines.container.style.opacity = '1';
 
     const headlineTicker = new Ticker({
         childElements: document.querySelectorAll('.headlines-display__container'),
@@ -71,7 +71,7 @@ export const renderHeadlines = (array) => {
         leftButton: headlines.left,
         rightButton: headlines.right,
         axis: 'X',
-        fadeIn: true,
+        fadeIn: false,
         interval: 15000
     });
     headlineTicker.init();

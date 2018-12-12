@@ -1,6 +1,4 @@
 //executes callback function on click or Enter key press
-import {headlines} from "../views/Base";
-
 export const clickAndEnter = (inputElement, button, callbackFunction)=> {
 
     //inputElement should be the text input element

@@ -3,6 +3,7 @@ import {categories, elements, geographicLocationQuery, mobileNav, sidebar, stick
 import {state} from "../index";
 import {RenderTweets} from "../views/tweets";
 import {clickAndEnter} from "./helperFunctions";
+import jump from 'jump.js';
 
 //read user input and add to state then execute
 export const userQuery = ()=> {
@@ -61,26 +62,12 @@ export const searchTwitter = ()=> {
     }
 };
 
-//nav-bar show-hide
-export const navigationToggle = ()=> {
-    let prevScrollPos = window.pageYOffset;
-    let trigger = elements.articlesList.offsetTop + 50;
-    window.onscroll = function() {
-        let currentScrollPos = window.pageYOffset;
-            if (prevScrollPos > currentScrollPos && window.pageYOffset > trigger) {
-                stickyNav.nav.style.transform = 'translateY(0px)';
-            } else {
-                stickyNav.nav.style.transform = 'translateY(-50px)';
-            }
-            prevScrollPos = currentScrollPos;
-        }
-};
-
-//mobile nav-bar show-hide
+//nav-bar toggle visibility(mobile and desktop)
 export const mobileNavToggle = ()=> {
     let mobileNavElements = [mobileNav.nav, mobileNav.navBackground, mobileNav.navMenu, mobileNav.navButton];
     const mobileCategoryButtons = [... mobileNav.categoryButtons].concat([... mobileNav.geoLocButtons]);
     const header = document.querySelector('.header');
+    const scroll = document.getElementById('scroll-top');
     const headlines = document.querySelector('.headlines-display').offsetTop;
     let prevScrollPos = window.pageYOffset;
     const trigger = header.offsetTop + 50;
@@ -103,6 +90,9 @@ export const mobileNavToggle = ()=> {
        el.addEventListener('click', scrollToHeadlines);
     });
 
+    //scroll back to top
+    scroll.addEventListener('click', ()=> {jump('.container')});
+
     //on window scroll toggle menu button visibility
     window.onscroll = function() {
         let currentScrollPos = window.pageYOffset;
@@ -110,6 +100,8 @@ export const mobileNavToggle = ()=> {
         //scroll up
         if (prevScrollPos > currentScrollPos && window.pageYOffset > trigger) {
             mobileNavElements.map(el => {el.setAttribute('style', 'top: .5rem; right: .5rem;')});
+            scroll.style.transform = 'translateY(0)';
+            stickyNav.nav.style.transform = 'translateY(0px)';
 
         //reset to initial top position
         } else if(window.pageYOffset < 36) {
@@ -119,8 +111,13 @@ export const mobileNavToggle = ()=> {
         //scroll down
         else if(prevScrollPos < currentScrollPos && window.pageYOffset > 36) {
             mobileNavElements.map(el => {el.setAttribute('style', 'top: -6rem; right: .5rem;')});
+            scroll.style.transform = 'translateY(100px)';
+
+        } else {
+            stickyNav.nav.style.transform = 'translateY(-50px)';
         }
 
         prevScrollPos = currentScrollPos;
     }
 };
+
