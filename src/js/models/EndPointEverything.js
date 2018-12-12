@@ -42,7 +42,6 @@ export default class GetNews {
         headlines.container.style.opacity = '0';
         elements.articleNode.style.opacity = '0';
         await tabletView.matches ? renderHeadlinesMobile(this.complementary) : renderHeadlines(this.complementary);
-
         await renderArticle(this.searchInEverything);
     }
 

@@ -32,6 +32,17 @@ import Ticker from "../components/ticker";
      }
 
      headlines.container.style.opacity = '1';
+
+     const headlineTicker = new Ticker({
+         childElements: document.querySelectorAll('.headlines-display__container'),
+         parent: headlines.container,
+         leftButton: headlines.left,
+         rightButton: headlines.right,
+         axis: 'X',
+         fadeIn: true,
+         interval: 15000
+     });
+     headlineTicker.init();
 };
 
 export const renderHeadlines = (array) => {
@@ -53,6 +64,17 @@ export const renderHeadlines = (array) => {
         }
 
         headlines.container.style.opacity = '1';
+
+    const headlineTicker = new Ticker({
+        childElements: document.querySelectorAll('.headlines-display__container'),
+        parent: headlines.container,
+        leftButton: headlines.left,
+        rightButton: headlines.right,
+        axis: 'X',
+        fadeIn: true,
+        interval: 15000
+    });
+    headlineTicker.init();
 };
 
 

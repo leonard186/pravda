@@ -69,8 +69,9 @@ export const mobileNav = {
     navBackground: document.querySelector('.mobile-navigation__background'),
     navMenu: document.querySelector('.mobile-navigation__menu'),
     nav: document.querySelector('.mobile-navigation'),
-    searchButton: document.querySelector('.mobile-navigation__search-btn'),
-    input: document.querySelector('.mobile-navigation__search-input'),
-    categoryButtons: document.querySelectorAll('.mobile-menu__btn-group__category-button'),
-    geoLocButtons: document.querySelectorAll('.mobile-menu__btn-group__geo-loc-button')
+    searchButton: document.getElementById('mobile-search__button'),
+    input: document.querySelector('.mobile-navigation__menu__search-input'),
+    checkbox: document.querySelector('.mobile-navigation__checkbox'),
+    categoryButtons: document.querySelectorAll('.mobile-navigation__menu__items__category-button'),
+    geoLocButtons: document.querySelectorAll('.mobile-navigation__menu__items__geo-loc-button')
 };

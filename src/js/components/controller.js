@@ -2,6 +2,7 @@ import GetNews from '../models/EndPointEverything';
 import {categories, elements, geographicLocationQuery, mobileNav, sidebar, stickyNav} from "../views/Base";
 import {state} from "../index";
 import {RenderTweets} from "../views/tweets";
+import {clickAndEnter} from "./helperFunctions";
 
 //read user input and add to state then execute
 export const userQuery = ()=> {
@@ -78,10 +79,31 @@ export const navigationToggle = ()=> {
 //mobile nav-bar show-hide
 export const mobileNavToggle = ()=> {
     let mobileNavElements = [mobileNav.nav, mobileNav.navBackground, mobileNav.navMenu, mobileNav.navButton];
-    let header = document.querySelector('.header');
+    const mobileCategoryButtons = [... mobileNav.categoryButtons].concat([... mobileNav.geoLocButtons]);
+    const header = document.querySelector('.header');
+    const headlines = document.querySelector('.headlines-display').offsetTop;
     let prevScrollPos = window.pageYOffset;
-    let trigger = header.offsetTop + 50;
+    const trigger = header.offsetTop + 50;
 
+    //scroll to headlines and hide mobile navigation
+    const scrollToHeadlines = ()=> {
+        mobileNav.checkbox.checked = false;
+
+        window.scrollTo({
+            top: headlines,
+            left: 0,
+            behavior: 'smooth'
+        });
+    };
+
+    //on search, scroll to headlines
+    clickAndEnter(mobileNav.input, mobileNav.searchButton, scrollToHeadlines);
+    //on category button click, scroll to headlines
+    mobileCategoryButtons.forEach(el => {
+       el.addEventListener('click', scrollToHeadlines);
+    });
+
+    //on window scroll toggle menu button visibility
     window.onscroll = function() {
         let currentScrollPos = window.pageYOffset;
 

@@ -1,16 +1,16 @@
-import {sidebar, menuSearch, allButtons} from '../views/Base';
+import {sidebar, menuSearch, allButtons, stickyNav, mobileNav} from '../views/Base';
 import TinyGesture from 'tinygesture';
 import {applyFunctionToButtons, clickAndEnter, setContainerSize} from "./helperFunctions";
+import {userQuery} from "./controller";
 
 export default class Ticker {
-    ///////////******    custom functions:   ******///////////
+
     constructor(param) {
         param = Object.assign({}, Ticker.emptyParam, param);
         this.param = param;
         this.count = {
             position: 0,
             index: 0,
-            timerStore: []
         };
         this.scrollState = {
             decrement: false,
@@ -18,58 +18,57 @@ export default class Ticker {
         };
         this.scrollDown = this.scrollDown.bind(this);
         this.scrollUp = this.scrollUp.bind(this);
-        this.timer = this.timer.bind(this);
         this.resetTickerPos = this.resetTickerPos.bind(this);
     }
 
-    timer() {
-        const setTimer = () => {
-            let startInterval = setTimeout(setTimer, 1000);
-
-            this.count.timerStore.push(startInterval);
-             if(this.count.timerStore.length === this.param.tickerInterval) {
-                this.scrollState.increment === true ? this.scrollUp(true) : this.scrollDown(true);
-                this.count.timerStore = [];
-            }
-        };
-        return setTimer();
-    }
 
     //reset ticker position to 0
     resetTickerPos() {
         console.log('reset');
         this.count.position = 0;
         this.count.index = 0;
-        this.count.timerStore = [];
-        console.log(this.count.timerStore);
         this.scrollState.decrement = false;
         this.scrollState.increment = true;
     }
 
     init() {
+
+        //Timer setup
+        let tickerInterval;
+        let that = this;
+        clickAndEnter(menuSearch.input, menuSearch.button, timerStop); //stop interval count on interaction with the menu search bar
+        clickAndEnter(stickyNav.input, stickyNav.button, timerStop); //stop interval count on interaction with the sticky navigation search bar
+        clickAndEnter(mobileNav.input, mobileNav.searchButton, timerStop); //stop interval count on interaction with the mobile menu search bar
+
+        function timerStart(){tickerInterval = setInterval(()=>{ //execute scroll function at a set time interval
+            that.scrollState.increment === true ? that.scrollUp(true) : that.scrollDown(true);
+        }, that.param.interval);}
+
+        //cancel interval function
+        function timerStop() { if(tickerInterval) tickerInterval = clearInterval(tickerInterval)}
+
+        //start timer
+        timerStart();
+
         clickAndEnter(menuSearch.input, menuSearch.button, this.resetTickerPos);
         applyFunctionToButtons(allButtons, this.resetTickerPos);
-        this.timer();
         const gesture = new TinyGesture(this.param.parent);
-        let scrollUpReset = ()=> {
-            this.scrollUp();
-            this.count.timerStore = [];
-        };
 
-        let scrollDownReset = ()=> {
-            this.scrollDown();
-            this.count.timerStore = [];
-        };
         //control buttons
         if(this.param.leftButton && this.param.rightButton) {
-            this.param.leftButton.addEventListener('click', scrollDownReset);
-            this.param.rightButton.addEventListener('click', scrollUpReset);
+            this.param.leftButton.addEventListener('click', this.scrollDown);
+            this.param.rightButton.addEventListener('click', this.scrollUp);
         }
 
-
         //gesture control
-        gesture.on('swiperight', scrollDownReset);
-        gesture.on('swipeleft',  scrollUpReset);
+        gesture.on('swiperight', this.scrollDown);
+        gesture.on('swipeleft',  this.scrollUp);
+
+        //pause the ticker while user interaction is ongoing
+        this.param.parent.addEventListener('mouseover', timerStop);
+        this.param.parent.addEventListener('mouseleave', timerStart);
+        this.param.parent.addEventListener("touchstart", timerStop);
+        this.param.parent.addEventListener("touchend", timerStart);
     }
 
     //sidebar ticker - no user input
@@ -80,7 +79,7 @@ export default class Ticker {
         const childElements = this.param.childElements;
         setContainerSize('height', this.param.parentWrap, childElements, 0, 10);
 
-       function intervalStart(){animateInterval = setInterval(animate, 5000);}
+       function timerStart(){animateInterval = setInterval(animate, 5000);}
 
         function timerStop() {
             sidebar.searchButton.innerHTML = '<img class="articles-display__sidebar__heading__search-button-spinner" src="./img/spinner.gif" alt="spinner">';
@@ -99,7 +98,7 @@ export default class Ticker {
             setTimeout(reset, 500);
         }
 
-        intervalStart();
+        timerStart();
     }
 
     ///////////******    reusable functions:   ******///////////
@@ -185,5 +184,5 @@ Ticker.emptyParam = {
     rightButton: null,
     axis: 'X',
     fadeIn: false,
-    tickerInterval: 10 //unit is measured in seconds and must be round
+    interval: 10000 //unit is measured in seconds and must be round
 };

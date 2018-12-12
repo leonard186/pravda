@@ -23,7 +23,7 @@ export async function renderBreakingNews() {
             leftButton: breakingNews.left,
             rightButton: breakingNews.right,
             axis: 'Y',
-            tickerInterval: 5
+            interval: 5000
         });
 
         //start the ticker
