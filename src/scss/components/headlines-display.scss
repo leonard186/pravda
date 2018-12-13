@@ -24,6 +24,25 @@
     margin-top: 0;
   }
 
+  //error display
+  &__error {
+
+    &-image {
+      width: 200px !important;
+      margin: auto;
+      display: block;
+    }
+
+    &-title {
+      color: $text-primary-light;
+      border-radius: 10px;
+      text-align: center;
+    }
+  }
+
+
+
+
   &__arrows-left,
   &__arrows-right {
     @include resetArrow($text-neutral-light, $text-neutral-light, 2.5rem);
@@ -109,6 +128,10 @@
 
     @media only screen and (max-width: 850px) {
       padding: 0;
+      height: 60%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     a {

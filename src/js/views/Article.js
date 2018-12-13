@@ -24,11 +24,11 @@ export const renderArticle = (array) => {
         } else {
             article.parent.innerHTML =
                 `<div class="articles-display__wrap">
-                    <picture class="articles-display__wrap__img-container" style="width: 60%">
+                    <picture class="articles-display__wrap__img-container articles-display__error__picture" style="width: 60%">
                        <img src="../img/error.png" class="articles-display__wrap__img-container-img" style="width: auto" alt="Error">
                     </picture>
                     <article class="articles-display__wrap__text">
-                        <h3 class="articles-display__wrap__text-title">Sorry, no such query exists in our database, please try another word</h3>
+                        <h3 class="articles-display__wrap__text-title articles-display__error__title">Sorry, no such query exists in our database, please try another word</h3>
                     </article>
                 </div>
                 `

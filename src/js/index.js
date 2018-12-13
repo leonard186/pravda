@@ -6,14 +6,13 @@ import {
     geoLocationPopulateState,
     assignGeoLocationButtons,
     userQuery,
-    searchTwitter, navigationToggle, mobileNavToggle
+    searchTwitter, navigationToggle, videoToggle
 } from "./components/controller";
-import {clickAndEnter, smoothScroll} from "./components/helperFunctions";
-import {headlines, headlinesButtonGroup, menuSearch, sidebar, stickyNav, mobileNav} from "./views/Base";
+import {clickAndEnter} from "./components/helperFunctions";
+import {headlinesButtonGroup, menuSearch, sidebar, stickyNav, mobileNav} from "./views/Base";
 import {renderBreakingNews} from "./views/BreakingNews";
 import {renderHeaderNewsSnippet} from "./views/Header";
 import {RenderTweets} from "./views/tweets";
-import Ticker from "./components/ticker";
 
 
 export const state = {};
@@ -38,17 +37,6 @@ export const state = {};
      assignCategoryButtons(mobileNav.categoryButtons);
      assignGeoLocationButtons(mobileNav.geoLocButtons);
 
-//start the ticker effect
-     /*const headlineTicker = new Ticker({
-         childElements: document.querySelectorAll('.headlines-display__container'),
-         parent: headlines.container,
-         leftButton: headlines.left,
-         rightButton: headlines.right,
-         axis: 'X',
-         fadeIn: true,
-         tickerInterval: 15
-     });
-      headlineTicker.init();*/
 //////////////************* END **************/////////////////
 
 
@@ -67,5 +55,6 @@ export const state = {};
 
 init();
 
-mobileNavToggle();
+navigationToggle();
+videoToggle();
 

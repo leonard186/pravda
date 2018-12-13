@@ -81,12 +81,14 @@
       color: $text-primary-light;
       font-size: 3rem;
       text-transform: uppercase;
+      padding-left: 1.2rem;
     }
 
     &-source {
       color: $text-neutral-light;
       font-size: 2rem;
       font-family: $font-spaced;
+      padding-left: 1.2rem;
     }
 
     &-text {

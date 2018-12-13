@@ -26,3 +26,9 @@
     transform: translate(120px);
   }
 }
+
+@keyframes spin {
+  100% {
+    transform:rotate(360deg);
+  }
+}

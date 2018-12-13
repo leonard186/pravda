@@ -1,7 +1,7 @@
 .container{
   display: grid;
   grid-template-rows: [top-menu] auto [logo] 13rem [categories] auto [countries] auto [header] 40rem [breaking] auto [headlines-display] minmax(max-content, 60rem) [articles] minmax(60rem, auto) [featured] 25rem [videos] minmax(60rem, auto) [footer] 30rem [footer-end];
-  grid-template-columns: minmax(2rem, 1fr) repeat(8, [col-start] minmax(min-content, 16rem) [col-end]) minmax(2rem, 1fr);
+  grid-template-columns:1fr repeat(8, [col-start] minmax(min-content, 16rem) [col-end]) 1fr;
 
   @media only screen and (max-width: 850px) {
     grid-template-rows: [top-menu] auto [logo] auto [categories] auto [countries] auto [header] 40rem [breaking] auto [headlines-display] 50rem [articles] minmax(60rem, auto) [featured] 25rem [videos] minmax(60rem, auto) [footer] minmax(30rem, auto) [footer-end];

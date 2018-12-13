@@ -21,28 +21,29 @@ import Ticker from "../components/ticker";
                     </article>
                 </div>`;
          });
+
+         const headlineTicker = new Ticker({
+             childElements: document.querySelectorAll('.headlines-display__container'),
+             parent: headlines.container,
+             leftButton: headlines.left,
+             rightButton: headlines.right,
+             axis: 'X',
+             fadeIn: false,
+             interval: 2000
+         });
+         headlineTicker.init();
+
      } else {
          headlines.container.innerHTML =
              `<div class="headlines-display__container">
                 <article class="headlines-display__primary">
-                    <img src="../img/error.png" alt="Error">
-                    <h3 class="headlines-display__title">Sorry, no such query exists in our database, please try another word</h3>
+                    <img src="../img/error.png" class="headlines-display__error-image" alt="Error">
+                    <h3 class="headlines-display__title headlines-display__error-title">Sorry, no such query exists in our database, please try another word</h3>
                 </article>
-            </div>`
+            </div>`;
+
+         headlines.container.style.transform = 'translateX(0)';
      }
-
-     //headlines.container.style.opacity = '1';
-
-     const headlineTicker = new Ticker({
-         childElements: document.querySelectorAll('.headlines-display__container'),
-         parent: headlines.container,
-         leftButton: headlines.left,
-         rightButton: headlines.right,
-         axis: 'X',
-         fadeIn: false,
-         interval: 15000
-     });
-     headlineTicker.init();
 };
 
 export const renderHeadlines = (array) => {
@@ -58,12 +59,13 @@ export const renderHeadlines = (array) => {
                     </div>`
             });
         } else {
-            headlines.article.innerHTML =
-                `<img src="../img/error.png" alt="Error">
-                <h3 class="headlines-display__title">Sorry, no such query exists in our database, please try another word</h3>`
-        }
+            headlines.article.forEach((element)=> {
+                element.innerHTML =
+                    `<img src="../img/error.png" class="headlines-display__error-image" alt="Error">
+                <h3 class="headlines-display__title headlines-display__error-title" id="">Sorry, no such query exists in our database, please try another word</h3>`
+            });
 
-        //headlines.container.style.opacity = '1';
+        }
 
     const headlineTicker = new Ticker({
         childElements: document.querySelectorAll('.headlines-display__container'),
@@ -72,7 +74,7 @@ export const renderHeadlines = (array) => {
         rightButton: headlines.right,
         axis: 'X',
         fadeIn: false,
-        interval: 15000
+        interval: 2000
     });
     headlineTicker.init();
 };

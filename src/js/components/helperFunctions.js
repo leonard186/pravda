@@ -2,22 +2,27 @@
 export const clickAndEnter = (inputElement, button, callbackFunction)=> {
 
     //inputElement should be the text input element
-    inputElement.addEventListener('keyup', (e)=> { //execute on Enter Key
-        e.preventDefault();
-        e.stopPropagation();
-        e.keyCode === 13 ? callbackFunction() : null;
-        setTimeout(()=> {//reset input field after submit
-            e.keyCode === 13 ? inputElement.value = '' : null;
-        }, 1000)
-    });
+    if(inputElement) {
+        inputElement.addEventListener('keyup', (e)=> { //execute on Enter Key
+            e.preventDefault();
+            e.stopPropagation();
+            e.keyCode === 13 ? callbackFunction() : null;
+            setTimeout(()=> {//reset input field after submit
+                e.keyCode === 13 ? inputElement.value = '' : null;
+            }, 1000)
+        });
+    }
+
 
     //button can be any element
-    button.addEventListener('click', ()=> {
-        callbackFunction();//execute callback function
-        setTimeout(()=> {//reset input field after submit
-            inputElement.value = '';
-        }, 1000)
-    });
+    if(button) {
+        button.addEventListener('click', ()=> {
+            callbackFunction();//execute callback function
+            setTimeout(()=> {//reset input field after submit
+                inputElement.value = '';
+            }, 1000)
+        });
+    }
 };
 
 export const applyFunctionToButtons = (buttons, callBackFn)=> {

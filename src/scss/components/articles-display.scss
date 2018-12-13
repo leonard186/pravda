@@ -12,6 +12,37 @@
     display: block;
   }
 
+
+  //error message
+  &__error {
+
+    &__title {
+      width: auto !important;
+    }
+
+    &__picture {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @media only screen and (max-width: 850px) {
+      &__picture {
+        width: 100%;
+        margin: 0 auto;
+
+        img {
+          display: block;
+          width: 200px !important;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+
+
   //articles container
   &__container {
     width: 65%;
@@ -41,10 +72,10 @@
     opacity: 1;
     transition: opacity .25s ease-in;
 
-    @media only screen and (max-width: 850px) {
+    @media only screen and (max-width: 1000px) {
       max-height: none;
       height: auto;
-      overflow-y: hidden;
+      overflow: hidden;
       background-color: rgba($text-neutral-light, .2);
     }
 
@@ -85,8 +116,9 @@
     display: flex;
     position: relative;
     height: 25.4rem;
+    box-shadow: 0 1.5rem 4rem rgba(0,0,0,0.15);
 
-    @media only screen and (max-width: 550px) {
+    @media only screen and (max-width: 850px) {
       height: auto;
       flex-direction: column;
       background-color: $text-primary-light;
@@ -101,7 +133,7 @@
       width: 40%;
       height: auto;
 
-      @media only screen and (max-width: 550px) {
+      @media only screen and (max-width: 850px) {
         width: 100%;
         height: auto;
       }
@@ -114,7 +146,7 @@
         position: absolute;
         transition: all .2s ease-in;
 
-        @media only screen and (max-width: 550px) {
+        @media only screen and (max-width: 850px) {
           position: relative;
           width: 100%;
           height: auto;
@@ -127,7 +159,7 @@
         right: 50%;
         transform: translate(50%, 0%);
 
-        @media only screen and (max-width: 550px) {
+        @media only screen and (max-width: 850px) {
           position: relative;
           width: 100%;
           height: auto;
@@ -138,7 +170,7 @@
     &__img-container:hover ~ &__text{
       opacity: 0;
 
-      @media only screen and (max-width: 550px) {
+      @media only screen and (max-width: 850px) {
         opacity: 1;
       }
     }
@@ -150,11 +182,11 @@
       width: 60%;
       padding: .8rem 3rem;
       transition: all .3s ease-in;
+      text-align: justify;
 
-      @media only screen and (max-width: 550px) {
+      @media only screen and (max-width: 850px) {
         width: 100%;
         height: auto;
-        font-size: 1.4rem;
       }
 
       @media only screen and (min-width: 800px) and (max-width: 1000px) {
@@ -169,7 +201,7 @@
         text-transform: uppercase;
         @include headerUnderline($text-primary-dark);
 
-        @media only screen and (max-width: 550px) {
+        @media only screen and (max-width: 850px) {
           margin-bottom: 2rem;
         }
       }

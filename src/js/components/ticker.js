@@ -1,6 +1,6 @@
-import {sidebar, menuSearch, stickyNav, mobileNav} from '../views/Base';
+import {sidebar, menuSearch, stickyNav, mobileNav, allButtons} from '../views/Base';
 import TinyGesture from 'tinygesture';
-import {clickAndEnter, setContainerSize} from "./helperFunctions";
+import {applyFunctionToButtons, clickAndEnter, setContainerSize} from "./helperFunctions";
 
 export default class Ticker {
 
@@ -17,19 +17,39 @@ export default class Ticker {
         };
         this.scrollDown = this.scrollDown.bind(this);
         this.scrollUp = this.scrollUp.bind(this);
+        this.reset = this.reset.bind(this);
+    }
+
+    reset() { //reset position
+        this.count = {
+            position: 0,
+            index: 0,
+        };
+        this.scrollState = {
+            decrement: false,
+            increment: true
+        };
     }
 
     init() {
-
         //Timer setup
         let tickerInterval;
         let that = this;
+
         clickAndEnter(menuSearch.input, menuSearch.button, timerStop); //stop interval count on interaction with the menu search bar
         clickAndEnter(stickyNav.input, stickyNav.button, timerStop); //stop interval count on interaction with the sticky navigation search bar
         clickAndEnter(mobileNav.input, mobileNav.searchButton, timerStop); //stop interval count on interaction with the mobile menu search bar
+        applyFunctionToButtons(allButtons, timerStop); // stop the timer when any of the category buttons is clicked
 
-        function timerStart(){tickerInterval = setInterval(()=>{ //execute scroll function at a set time interval
+        applyFunctionToButtons(allButtons, this.reset);//reset position when any of the category buttons is clicked
+        clickAndEnter(stickyNav.input, stickyNav.button, this.reset); //reset position on interaction with the sticky navigation search bar
+        clickAndEnter(mobileNav.input, mobileNav.searchButton, this.reset); //reset position on interaction with the mobile menu search bar
+        clickAndEnter(menuSearch.input, menuSearch.button, this.reset); //reset position on interaction with the menu search bar
+
+        function timerStart(){tickerInterval = setInterval(()=> { //execute scroll function at a set time interval
             that.scrollState.increment === true ? that.scrollUp(true) : that.scrollDown(true);
+            console.log('position: ' + that.count.position);
+            console.log('index: ' + that.count.index);
         }, that.param.interval);}
 
         //cancel interval function

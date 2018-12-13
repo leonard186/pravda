@@ -11,7 +11,7 @@ export const elements = {
 };
 export const categories = ['business', 'entertainment', 'general', 'health', 'science', 'sports', 'technology'];
 export const geographicLocationQuery = ['world', 'europe', 'north america', 'south america', 'australia', 'asia', 'africa'];
-export const allButtons = [... document.querySelectorAll('.headlines-list__btn-group-button')].concat([... document.querySelectorAll('.articles-list__btn-group-button')]);
+export const allButtons = [... document.querySelectorAll('.headlines-list__btn-group-button')].concat([... document.querySelectorAll('.articles-list__btn-group-button')], [... document.querySelectorAll('.mobile-navigation__button-group ')]);
 
 export const article = {
     parent: document.querySelector('.articles-display__content'),
@@ -74,4 +74,9 @@ export const mobileNav = {
     checkbox: document.querySelector('.mobile-navigation__checkbox'),
     categoryButtons: document.querySelectorAll('.mobile-navigation__menu__items__category-button'),
     geoLocButtons: document.querySelectorAll('.mobile-navigation__menu__items__geo-loc-button')
+};
+
+export const video = {
+    parent: document.querySelector('.videos'),
+    play: document.querySelector('.videos__play'),
 };

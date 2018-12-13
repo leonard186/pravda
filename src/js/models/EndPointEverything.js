@@ -38,8 +38,6 @@ export default class GetNews {
         this.searchInHeadlines = Parser.parseNews(this.filter(jsonH.articles));
         this.searchInEverything = Parser.parseNews(this.filter(jsonE.articles));
         this.complementary = this.searchInHeadlines.concat(this.searchInEverything);
-        //headlines.container.style.opacity = '0';
-        //elements.articleNode.style.opacity = '0';
         await tabletView.matches ? renderHeadlinesMobile(this.complementary) : renderHeadlines(this.complementary);
         await renderArticle(this.searchInEverything);
     }
