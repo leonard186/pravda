@@ -9,7 +9,7 @@ export const renderArticle = (array) => {
                 article.parent.innerHTML +=
                     `<div class="articles-display__wrap">
                         <picture class="articles-display__wrap__img-container">
-                            <img src="${data.urlToImage}" class="articles-display__wrap__img-container-img" alt="article image">
+                            <img src="${data.urlToImage}" onError="this.onerror=null;this.src='./img/headlines-3.jpg'" class="articles-display__wrap__img-container-img" alt="article image">
                         </picture>
                         <article class="articles-display__wrap__text">
                             <h3 class="articles-display__wrap__text-title">${data.source.name}</h3>
@@ -26,7 +26,7 @@ export const renderArticle = (array) => {
             article.parent.innerHTML =
                 `<div class="articles-display__wrap">
                     <picture class="articles-display__wrap__img-container articles-display__error__picture" style="width: 60%">
-                       <img src="../img/error.png" class="articles-display__wrap__img-container-img" style="width: auto" alt="Error">
+                       <img src="./img/error.png" class="articles-display__wrap__img-container-img" style="width: auto" alt="Error">
                     </picture>
                     <article class="articles-display__wrap__text">
                         <h3 class="articles-display__wrap__text-title articles-display__error__title">Sorry, no such query exists in our database, please try another word</h3>

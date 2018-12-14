@@ -13,7 +13,7 @@ import {headlines} from './Base';
                 headlines.container.innerHTML +=
                     `<div class="headlines-display__container">
                     <article class="headlines-display__primary">
-                        <img src="${element.urlToImage}" alt="${element.title}" class="headlines-display__image">
+                        <img src="${element.urlToImage}" alt="${element.title}" onError="this.onerror=null;this.src=\'./img/headlines-3.jpg\'" class="headlines-display__image">
                         <div class="headlines-display__text-container">
                             <h3 class="headlines-display__title">${element.source.name}</h3>
                             <p class="headlines-display__content">${element.title}</p>
@@ -31,7 +31,7 @@ import {headlines} from './Base';
              headlines.container.innerHTML +=
                  `<div class="headlines-display__container">
                 <article class="headlines-display__primary">
-                    <img src="../img/error.png" class="headlines-display__error-image" alt="Error">
+                    <img src="./img/error.png" class="headlines-display__error-image" alt="Error">
                     <h3 class="headlines-display__title headlines-display__error-title">Sorry, no such query exists in our database, please try another word</h3>
                 </article>
             </div>`;
@@ -47,7 +47,7 @@ export const renderHeadlines = (array) => {
     if(array.length !== 0) {
         headlines.article.forEach((element, index)=> {
             element.innerHTML =
-                `<img src="${array[index].urlToImage}" alt="${array[index].title}" class="headlines-display__image">
+                `<img src="${array[index].urlToImage}" alt="${array[index].title}" onError="this.onerror=null;this.src=\'./img/headlines-3.jpg\'" class="headlines-display__image">
                 <div class="headlines-display__text-container">
                     <h3 class="headlines-display__title">${array[index].source.name}</h3>
                     <p class="headlines-display__content">${array[index].title}</p>
@@ -59,7 +59,7 @@ export const renderHeadlines = (array) => {
     } else {
         headlines.article.forEach((element)=> {
             element.innerHTML =
-                `<img src="../img/error.png" class="headlines-display__error-image" alt="Error">
+                `<img src="./img/error.png" class="headlines-display__error-image" alt="Error">
             <h3 class="headlines-display__title headlines-display__error-title" id="">Sorry, no such query exists in our database, please try another word</h3>`
         });
     }
