@@ -11,6 +11,7 @@ export default class Parser {
         };
     }
 
+    //parse Twitter feed and customize matched elements
     parseTwitter() {
         let newArray = [];
         let rules = this.rules;
@@ -37,6 +38,5 @@ export default class Parser {
             newArray.push(elem);
         });
         return newArray
-
     }
 }

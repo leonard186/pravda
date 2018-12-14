@@ -13,8 +13,7 @@ export const clickAndEnter = (inputElement, button, callbackFunction)=> {
         });
     }
 
-
-    //button can be any element
+    //button can be any HTML element
     if(button) {
         button.addEventListener('click', ()=> {
             callbackFunction();//execute callback function
@@ -25,6 +24,7 @@ export const clickAndEnter = (inputElement, button, callbackFunction)=> {
     }
 };
 
+//executes callback function when clicked on any of the specified HTML collection item
 export const applyFunctionToButtons = (buttons, callBackFn)=> {
     buttons.forEach(button => button.addEventListener('click', callBackFn, false));
 };

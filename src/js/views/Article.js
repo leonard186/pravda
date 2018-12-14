@@ -1,5 +1,5 @@
 import {article, elements, headlines} from './Base';
-import {setContainerSize} from "../components/helperFunctions";
+import {setContainerSize} from "../controller/HelperFunctions";
 
 export const renderArticle = (array) => {
     setTimeout(()=> {//delay rendering content until fade out effect finishes
@@ -21,6 +21,7 @@ export const renderArticle = (array) => {
                         </article>
                     </div>`;
             });
+
         } else {
             article.parent.innerHTML =
                 `<div class="articles-display__wrap">
@@ -33,7 +34,6 @@ export const renderArticle = (array) => {
                 </div>
                 `
         }
-
 
         article.parent.style.opacity = '1';
         elements.searchButton.forEach(elem => elem.innerHTML = '<i class="fas fa-search"></i>'); //render search button

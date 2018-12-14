@@ -1,10 +1,6 @@
 import {elements} from "../views/Base";
 
-const pushTime = (domElement) => {
-    let date = new Date();
-    domElement.innerHTML = date.toLocaleTimeString();
-};
-
+//customize date
 const getDate = () => {
     let days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
     let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -34,7 +30,14 @@ const getDate = () => {
     return `${days[weekday]}, ${returnDate(day)} ${months[month]} ${year}`;
 };
 
+//returns exact time
+const pushTime = (domElement) => {
+    let date = new Date();
+    domElement.innerHTML = date.toLocaleTimeString(); //insert time to any given HTML Element
+};
+
+//renders exact time and date every second
 export const renderTimeDate = ()=> {
     setInterval(() => {pushTime(elements.timeNode)}, 1000);
-    elements.dateNode.innerHTML = getDate();
+    elements.dateNode.innerHTML = getDate(); //insert date into HTML element
 };

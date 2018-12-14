@@ -1,4 +1,4 @@
-import GetNews from '../models/EndPointEverything';
+import GetNews from '../models/NewsAPI';
 import {
     categories,
     elements,
@@ -10,8 +10,8 @@ import {
     video
 } from "../views/Base";
 import {state} from "../index";
-import {RenderTweets} from "../views/tweets";
-import {clickAndEnter} from "./helperFunctions";
+import {RenderTweets} from "../views/Tweets";
+import {clickAndEnter} from "./HelperFunctions";
 import jump from 'jump.js';
 
 //read user input and add to state then execute
@@ -24,8 +24,6 @@ export const userQuery = ()=> {
         state.searchHeadlines = new GetNews({searchQuery: input});
         state.search.searchQuery();
     }
-
-
 };
 
 //populate state with categories
@@ -37,10 +35,8 @@ export const headlinesPopulateState = ()=> {
 
 //assign category button to their corresponding category
 export const assignCategoryButtons = (buttonCollection)=> {
-    console.log(buttonCollection);
     buttonCollection.forEach((button, index) => {
         button.addEventListener('click', ()=>{
-            console.log(state[categories[index]].query.category);
             state[categories[index]].categories();
         })
     })
@@ -75,10 +71,9 @@ export const searchTwitter = ()=> {
 export const navigationToggle = ()=> {
     let mobileNavElements = [mobileNav.nav, mobileNav.navBackground, mobileNav.navMenu, mobileNav.navButton];
     const mobileCategoryButtons = [... mobileNav.categoryButtons].concat([... mobileNav.geoLocButtons]);
-    const header = document.querySelector('.header');
     const scroll = document.getElementById('scroll-top');
     let prevScrollPos = window.pageYOffset;
-    const trigger = header.offsetTop + 50;
+    const trigger = document.querySelector('.header').offsetTop + 50;
 
 
     const scrollToHeadlines = ()=> {
@@ -110,23 +105,22 @@ export const navigationToggle = ()=> {
         //reset to initial top position
         } else if(window.pageYOffset < 36) {
             mobileNavElements.map(el => {el.setAttribute('style', 'top: 6rem; right: .5rem;')});
-        }
 
         //scroll down
-        else if(prevScrollPos < currentScrollPos && window.pageYOffset > 36) {
+        } else if(prevScrollPos < currentScrollPos && window.pageYOffset > 36) {
             mobileNavElements.map(el => {el.setAttribute('style', 'top: -6rem; right: .5rem;')});
             scroll.style.transform = 'translateY(100px)';
-
-        } else {
-            stickyNav.nav.style.transform = 'translateY(-50px)';
         }
+
+        //hide sticky navigation bar on scroll down or when it reaches the header section
+        if(prevScrollPos < currentScrollPos || window.pageYOffset < trigger) { stickyNav.nav.style.transform = 'translateY(-50px)';}
 
         prevScrollPos = currentScrollPos;
     }
 };
 
-
-export const videoToggle = ()=> { //show video player on user request
+//show video player on user request
+export const videoToggle = ()=> {
     video.play.addEventListener('click', ()=> { //insert video players into page on user interaction
         video.play.setAttribute('style', 'animation: spin 2s infinite;');
             video.parent.innerHTML +=

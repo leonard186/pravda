@@ -1,4 +1,4 @@
-import Ticker from '../components/ticker';
+import Ticker from '../controller/Ticker';
 import {header} from './Base';
 import GetRSS from '../models/RssParse';
 
@@ -11,7 +11,7 @@ export async function renderHeaderNewsSnippet() {
         header.ul.innerHTML +=
             `
              <li class="header__news-snippet__ul-li">
-                <h2 class="header__news-snippet__ul-li-title">${elem.title}</h2>
+                <a href="${elem.link}"><h2 class="header__news-snippet__ul-li-title">${elem.title}</h2></a>
                 <a href="${elem.link}"><span class="header__news-snippet__ul-li-info">${elem.content}</span></a>
             </li>
               `
@@ -28,4 +28,4 @@ export async function renderHeaderNewsSnippet() {
 
     //start the ticker
     ticker.init();
-};
+}

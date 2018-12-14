@@ -1,23 +1,21 @@
 import {renderArticle} from '../views/Article';
 import {renderHeadlines, renderHeadlinesMobile} from "../views/Headline";
-import {newsApiK} from '../models/keys';
-import {elements, headlines} from "../views/Base";
-import Parser from '../components/textParser'
+import {newsApiK} from './Keys';
+import Parser from '../controller/TextParser'
 
 const baseURL = 'https://newsapi.org/v2/';
 const key = newsApiK[0].concat(newsApiK[1], newsApiK[2], newsApiK[3]);
-
 
 export default class GetNews {
     constructor(query) {
         query = Object.assign({}, GetNews.default, query);
         this.query = query;
-        this.searchInHeadlines = [];
-        this.searchInEverything = [];
-        this.complementary = [];
+        this.searchInHeadlines = []; //store headlines results
+        this.searchInEverything = []; //store search query results
+        this.complementary = []; //store both headlines and search query results
     }
 
-    //search any content in Everything
+    //search any content in 'Everything' endpoint
     async searchQuery() {
         const responseE = await fetch(`${baseURL}everything?q=${encodeURI(this.query.searchQuery)}&apiKey=${key}`);
         const responseH = await fetch(`${baseURL}top-headlines?q=${encodeURI(this.query.searchQuery)}&apiKey=${key}`);
@@ -31,7 +29,8 @@ export default class GetNews {
         await this.getResults(responseH, responseE);
     }
 
-    async getResults(responseH, responseE) { //process promise function
+    //process promises
+    async getResults(responseH, responseE) {
         const tabletView = window.matchMedia("(max-width: 850px)");
         const jsonH = await responseH.json();
         const jsonE = await responseE.json();
@@ -42,6 +41,7 @@ export default class GetNews {
         await renderArticle(this.searchInEverything);
     }
 
+    //filter through result object and return an array of valid items
     filter(result) {
         let final = [];
         result.map(e => {
@@ -53,6 +53,7 @@ export default class GetNews {
     };
 }
 
+//default parameters
 GetNews.default = {
     searchQuery: 'brexit',
     country: 'gb',

@@ -1,10 +1,10 @@
 import {breakingNews} from './Base';
-import Ticker from '../components/ticker';
+import Ticker from '../controller/Ticker';
 import GetRSS from '../models/RssParse';
 
 export async function renderBreakingNews() {
 
-    const reddit = new GetRSS('https://cors-anywhere.herokuapp.com/https://www.reddit.com/r/news/.rss');
+     const reddit = new GetRSS('https://cors-anywhere.herokuapp.com/https://www.reddit.com/r/news/.rss');
     const result = await reddit.getResponse();
         breakingNews.ul.innerHTML = ''; //clear dom element prior to appending fresh content
         result.map((elem)=> { //render filtered titles to the DOM
@@ -28,4 +28,4 @@ export async function renderBreakingNews() {
 
         //start the ticker
         ticker.init();
-};
+}

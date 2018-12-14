@@ -1,4 +1,4 @@
-import {twitterK} from "./keys";
+import {twitterK} from "./Keys";
 
 let baseURL = 'https://cors-anywhere.herokuapp.com/https://api.twitter.com/oauth2/token';
 let base64Key = twitterK[0].concat(twitterK[1], twitterK[2], twitterK[3]);

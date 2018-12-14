@@ -1,3 +1,5 @@
+//HTML Elements stored in objects
+
 export const elements = {
     searchInput: document.querySelectorAll('.news-search-input'),
     searchButton: document.querySelectorAll('.news-search'),
@@ -9,6 +11,7 @@ export const elements = {
     headerNews: document.querySelector('.header__news-snippet'),
     articlesList: document.querySelector('.articles-list')
 };
+
 export const categories = ['business', 'entertainment', 'general', 'health', 'science', 'sports', 'technology'];
 export const geographicLocationQuery = ['world', 'europe', 'north america', 'south america', 'australia', 'asia', 'africa'];
 export const allButtons = [... document.querySelectorAll('.headlines-list__btn-group-button')].concat([... document.querySelectorAll('.articles-list__btn-group-button')], [... document.querySelectorAll('.mobile-navigation__button-group ')]);
