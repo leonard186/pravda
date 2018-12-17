@@ -20,6 +20,12 @@ export const state = {}; //store all class instances for search queries and cate
 
  async function init() {
 
+     //start responsive navigation
+     navigationToggle();
+
+     //show video iframes
+     videoToggle();
+
      renderTimeDate(); //show time and date
      const loadDefaultTweets = new RenderTweets('top news'); //initiate default tweet query
      userQuery('latest'); //initiate default article query
@@ -66,16 +72,10 @@ export const state = {}; //store all class instances for search queries and cate
      //show dynamic content
      await renderHeaderNewsSnippet();
      await renderBreakingNews();
+     await headlineTicker.init();
      await loadDefaultTweets.render();
-     headlineTicker.init();
+
 //////////////************* END **************/////////////////
-
-
-     //start responsive navigation
-     navigationToggle();
-
-     //show video iframes
-     videoToggle();
 }
 
  init();
