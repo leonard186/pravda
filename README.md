@@ -3,9 +3,9 @@
 This project aims to offer news articles, headlines, tweets and live video streaming by browsing news categories or searching for keywords.
 
 
-## Live demo
+# Live demo
 
-[demo link](https://leonard186.github.io/pravda/dist/index.html)
+[https://leonard186.github.io/pravda/dist/index.html](https://leonard186.github.io/pravda/dist/index.html)
 
 
 ## Description
