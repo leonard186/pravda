@@ -1,6 +1,6 @@
 # PRAVDA
 
-This web application offers news articles, headlines, tweets and live video streaming by browsing news categories or searching for keywords.
+Pravda is a web application that offers news articles, headlines, tweets and live video streaming by browsing news categories or searching for keywords.
 
 
 # Live demo
