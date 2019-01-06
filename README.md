@@ -1,6 +1,7 @@
 # PRAVDA
 
-Pravda is a web application that offers news articles, headlines, tweets and live video streaming by browsing news categories or searching for keywords.
+Pravda is a web application that offers news articles, headlines, tweets </br>
+and live video streaming by browsing news categories or searching for keywords.
 
 
 # Live demo
@@ -10,11 +11,10 @@ Pravda is a web application that offers news articles, headlines, tweets and liv
 
 ## Description
 
-This project was built from scratch using HTML, CSS3(SASS) and pure JavaScript. 
-The layout was designed with the CSS Grid Layout Module, supported by modern browsers. 
-It allows to browse news articles and headlines by category or search for keywords and display the result on any 
-device. 
-
+This project was built from scratch using HTML, CSS3(SASS) and pure JavaScript.</br>
+The layout was designed with the CSS Grid Layout Module, supported by modern browsers.</br>
+It allows to browse news articles and headlines by category or search for keywords and </br>
+display the result on any device. 
 
 ## Tech used
 
