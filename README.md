@@ -1,6 +1,6 @@
 # PRAVDA
 
-This project aims to offer news articles, headlines, tweets and live video streaming by browsing news categories or searching for keywords.
+This web application offers news articles, headlines, tweets and live video streaming by browsing news categories or searching for keywords.
 
 
 # Live demo
@@ -36,3 +36,4 @@ device.
 * [Jump.js](https://github.com/callmecavs/jump.js) - for smooth scrolling
 * [rss-parser](https://www.npmjs.com/package/rss-parser) - for parsing RSS feed
 * [24h news template](http://via-theme.com/24hNews/#) - inspiration for design ideas
+* [Elon Musk Tweet on Pravda](https://twitter.com/elonmusk/status/999367582271422464?lang=en) - inspiration for the application name
